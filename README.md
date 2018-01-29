@@ -24,4 +24,4 @@ This AWS CloudFormation template creates the full Dspace infrastracture which in
   - Two Lambda Functions for the computation
   
 # General Architecture 
-![alt text](https://raw.githubusercontent.com/dspaceproject/DspaceOrchestration/master/image.png)
+![alt text](https://github.com/dspaceproject/DspaceOrchestration/blob/master/files/image.png)
