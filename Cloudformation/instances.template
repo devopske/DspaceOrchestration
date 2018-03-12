@@ -1,0 +1,4603 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "Step 3 of 3: Creating Aurora database and Auto scaling groups which launch under specified conditions.",
+    "Metadata": {
+        "AWS::CloudFormation::Designer": {
+            "b661e139-47ce-4298-8c53-266dad8e4672": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 600,
+                    "y": 20
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "89968c50-09dc-472c-91c4-29a0f16357eb"
+                ],
+                "dependson": [
+                    "3bec37e4-ab52-40e0-b8b1-95ccccad5133"
+                ]
+            },
+            "b80f8290-8631-4feb-9181-c5e144697574": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 770,
+                    "y": 20
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "85a39e67-3e65-414a-aa9a-9c77678bf586"
+                ],
+                "dependson": [
+                    "3bec37e4-ab52-40e0-b8b1-95ccccad5133"
+                ]
+            },
+            "554d951b-a4b5-4894-ac6c-05a84118ba92": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 940,
+                    "y": 10
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "c99596dd-1ef7-4192-a2b6-9928ca536010"
+                ],
+                "dependson": [
+                    "3bec37e4-ab52-40e0-b8b1-95ccccad5133"
+                ]
+            },
+            "a49dc259-e412-431f-9466-52a6369d6013": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1100,
+                    "y": 10
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "d3dc4136-10a7-46b1-a693-b6c49e28768d"
+                ],
+                "dependson": [
+                    "3bec37e4-ab52-40e0-b8b1-95ccccad5133"
+                ]
+            },
+            "a1489d34-cf12-4efc-ad4d-91f31730f102": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1220,
+                    "y": 20
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "a7df699e-07f0-4cc3-b491-26893b09748e"
+                ],
+                "dependson": [
+                    "3bec37e4-ab52-40e0-b8b1-95ccccad5133"
+                ]
+            },
+            "89968c50-09dc-472c-91c4-29a0f16357eb": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 600,
+                    "y": 160
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "85a39e67-3e65-414a-aa9a-9c77678bf586": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 770,
+                    "y": 160
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "c99596dd-1ef7-4192-a2b6-9928ca536010": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 910,
+                    "y": 160
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "d3dc4136-10a7-46b1-a693-b6c49e28768d": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1070,
+                    "y": 150
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "a7df699e-07f0-4cc3-b491-26893b09748e": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1220,
+                    "y": 145
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "5386bc2e-00c2-4718-b4b7-b5db5d25ab8c": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 590,
+                    "y": 280
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "97086e35-3dce-4b76-9078-587a0a250438"
+                ],
+                "dependson": [
+                    "3bec37e4-ab52-40e0-b8b1-95ccccad5133"
+                ]
+            },
+            "b1553aee-5865-49a6-85ec-94909c355a55": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 780,
+                    "y": 280
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "49a427b1-9fa7-4da2-8cc6-52e47f4da7fc"
+                ],
+                "dependson": [
+                    "3bec37e4-ab52-40e0-b8b1-95ccccad5133"
+                ]
+            },
+            "6a2ef2ae-503b-43b3-8363-13fc73b7b165": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 940,
+                    "y": 280
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "90b70c62-ac94-467f-969a-1778433e1cf8"
+                ],
+                "dependson": [
+                    "3bec37e4-ab52-40e0-b8b1-95ccccad5133"
+                ]
+            },
+            "abbe216f-ce9a-4509-a6bb-4f74bddfa1bf": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1090,
+                    "y": 270
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "6bc0b06b-6621-48b1-975e-d507456284f7"
+                ],
+                "dependson": [
+                    "3bec37e4-ab52-40e0-b8b1-95ccccad5133"
+                ]
+            },
+            "87ec8c47-06f1-4010-9a25-8563870315a9": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1239,
+                    "y": 262
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "266adf31-7209-4a79-bd11-8ff5a21f04b7"
+                ],
+                "dependson": [
+                    "3bec37e4-ab52-40e0-b8b1-95ccccad5133"
+                ]
+            },
+            "97086e35-3dce-4b76-9078-587a0a250438": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 590,
+                    "y": 390
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "49a427b1-9fa7-4da2-8cc6-52e47f4da7fc": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 780,
+                    "y": 400
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "90b70c62-ac94-467f-969a-1778433e1cf8": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 940,
+                    "y": 390
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "6bc0b06b-6621-48b1-975e-d507456284f7": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1090,
+                    "y": 390
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "266adf31-7209-4a79-bd11-8ff5a21f04b7": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1240,
+                    "y": 380
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "13a4c9a5-73fe-4a78-b1b4-8b3314c5b6d3": {
+                "size": {
+                    "width": 300,
+                    "height": 190
+                },
+                "position": {
+                    "x": 111,
+                    "y": 101
+                },
+                "z": 0,
+                "embeds": [
+                    "3bec37e4-ab52-40e0-b8b1-95ccccad5133"
+                ]
+            },
+            "3bec37e4-ab52-40e0-b8b1-95ccccad5133": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 206,
+                    "y": 158
+                },
+                "z": 1,
+                "parent": "13a4c9a5-73fe-4a78-b1b4-8b3314c5b6d3",
+                "embeds": [],
+                "isassociatedwith": [
+                    "6e707597-1511-4573-9870-1e7388caa078"
+                ],
+                "dependson": [
+                    "13a4c9a5-73fe-4a78-b1b4-8b3314c5b6d3"
+                ]
+            },
+            "6e707597-1511-4573-9870-1e7388caa078": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 240,
+                    "y": 370
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "80432a4f-0057-4a83-a9a6-d5c0ddcd1169"
+                ],
+                "iscontainedinside": [
+                    "13a4c9a5-73fe-4a78-b1b4-8b3314c5b6d3"
+                ]
+            },
+            "80432a4f-0057-4a83-a9a6-d5c0ddcd1169": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 400,
+                    "y": 370
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "9f18995b-3aca-40eb-b2f3-0cfd454dd3f6": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 600,
+                    "y": -180
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "b661e139-47ce-4298-8c53-266dad8e4672"
+                ]
+            },
+            "3cea7321-d1e4-4479-ad54-1698acb0baae": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 596.3386438004732,
+                    "y": -84.3203764004379
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "b661e139-47ce-4298-8c53-266dad8e4672"
+                ]
+            },
+            "6cf126d5-4a00-4df4-8ad1-8ef08721e699": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 769.3968960273648,
+                    "y": -180.3397937650359
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "b80f8290-8631-4feb-9181-c5e144697574"
+                ]
+            },
+            "4738b13f-277e-49f8-a65f-6f2d5bbb0ac1": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 771.6299057335183,
+                    "y": -86.55338610659133
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "b80f8290-8631-4feb-9181-c5e144697574"
+                ]
+            },
+            "fce4e3d3-9254-417e-8030-092d9481690d": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 902.2609735434946,
+                    "y": -187.0388228834962
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "554d951b-a4b5-4894-ac6c-05a84118ba92"
+                ]
+            },
+            "74aa18db-127d-485f-a9af-0eab0cb112a2": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 930,
+                    "y": -90
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "554d951b-a4b5-4894-ac6c-05a84118ba92"
+                ]
+            },
+            "9080075f-e8bc-42ae-b4fd-6a2e27862e09": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1060,
+                    "y": -190
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "a49dc259-e412-431f-9466-52a6369d6013"
+                ]
+            },
+            "ea931e40-e99c-49c6-9b4c-fdecdb725015": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1090,
+                    "y": -80
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "a49dc259-e412-431f-9466-52a6369d6013"
+                ]
+            },
+            "91f383dc-cc3a-4c6a-8630-d375b494c141": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1200.3677693149791,
+                    "y": -188.15532773657293
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "a1489d34-cf12-4efc-ad4d-91f31730f102"
+                ]
+            },
+            "91c1ae84-964b-4048-a888-04bd4b230ab8": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1200,
+                    "y": -90
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "a1489d34-cf12-4efc-ad4d-91f31730f102"
+                ]
+            },
+            "476f9438-578a-4577-9bd7-bc600a16dad6": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 587.4066049758594,
+                    "y": 506.31067916454543
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "5386bc2e-00c2-4718-b4b7-b5db5d25ab8c"
+                ]
+            },
+            "675a7b54-0c3a-43fe-9807-b4c86004c819": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 590,
+                    "y": 610
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "5386bc2e-00c2-4718-b4b7-b5db5d25ab8c"
+                ]
+            },
+            "e589fea8-b82b-413e-a7fd-f886245b2792": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 770,
+                    "y": 510
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "b1553aee-5865-49a6-85ec-94909c355a55"
+                ]
+            },
+            "3650d4d2-b5dc-4962-84c0-0b08004d5d4f": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 766.0473814681347,
+                    "y": 605.6796110883736
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "b1553aee-5865-49a6-85ec-94909c355a55"
+                ]
+            },
+            "3b2f2016-08e0-4bb1-83d9-ea0f8d006646": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 930,
+                    "y": 510
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "6a2ef2ae-503b-43b3-8363-13fc73b7b165"
+                ]
+            },
+            "6767f15d-a495-4114-8b15-8f5a17824e95": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 926.8240803111826,
+                    "y": 619.0776693252942
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "6a2ef2ae-503b-43b3-8363-13fc73b7b165"
+                ]
+            },
+            "a46345ff-b697-4406-9c23-6ce0bec47df8": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1080,
+                    "y": 500
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "abbe216f-ce9a-4509-a6bb-4f74bddfa1bf"
+                ]
+            },
+            "48483030-7ca6-43ae-986e-32dc5b65ed97": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1080,
+                    "y": 620
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "abbe216f-ce9a-4509-a6bb-4f74bddfa1bf"
+                ]
+            },
+            "a0d6d854-6f8a-4471-9373-cb736ff4c963": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1240,
+                    "y": 510
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "87ec8c47-06f1-4010-9a25-8563870315a9"
+                ]
+            },
+            "59630f35-dafa-4bd3-8258-b75610f96f1c": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1236.0959246134341,
+                    "y": 620.194174178371
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "87ec8c47-06f1-4010-9a25-8563870315a9"
+                ]
+            },
+            "f7defb55-217a-4842-83fe-520231e06905": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1520,
+                    "y": 100
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "b1676110-7611-4950-b059-96fe1774ad45": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 450,
+                    "y": 520
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "599dede7-42bf-4e15-969c-5656e9d70ab7": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 450,
+                    "y": 620
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "daacb5b9-2086-4f5c-86de-6962beb00456": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 670,
+                    "y": 520
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "252dc9b0-65eb-4143-acff-eae598af5acf": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 670,
+                    "y": 610
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "7c261c34-8982-401b-8540-565790410b3a": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 850,
+                    "y": 510
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "83f96313-da14-48c3-a0a9-e56aa542f613": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 850,
+                    "y": 620
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "4890e286-638d-49bc-9d42-78afc025d778": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1160,
+                    "y": 510
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "180a8f83-eacf-4a0d-aba9-bde59ccaa8f1": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1150,
+                    "y": 620
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "e9b4e95b-0232-4bd0-bdff-c688176b0a0b": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1360,
+                    "y": 500
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "30739107-8f9b-42c1-80e3-1f5bb437b695": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1360,
+                    "y": 610
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "6e539a47-bdee-4d6c-8ecf-02f97390de2e": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 477.98912937434073,
+                    "y": -86.55338610659133
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "231e6203-1893-4d44-b9c5-7d8d4bebcddd": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 485.80466334587777,
+                    "y": 9.466031258006662
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "73a1b73b-0511-40cb-8a2d-f785fdc24016": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 690,
+                    "y": -80
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "219f62e2-ba10-4d9a-a64e-79adf6450e2e": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 680,
+                    "y": 20
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "b132b650-df10-4e23-a189-cbe9a5927f2b": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 850,
+                    "y": -80
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "a0de1efb-a148-4db2-827d-9349733a7bd3": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 860,
+                    "y": 10
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "5f2f5e9e-4f86-4660-afc5-0a1b3f548f54": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1010,
+                    "y": -80
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "8fb5c9d0-514a-48f7-9c24-4346ccd0e692": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1020,
+                    "y": 10
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "fc9b2183-f642-4c69-9071-7e1671acd6fd": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1313.134759475728,
+                    "y": -105.53396860889559
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "dd2c1fd2-15e4-4376-ab00-460ee8c52303": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1324.2998080064951,
+                    "y": 10.582536111083382
+                },
+                "z": 0,
+                "embeds": []
+            }
+        }
+    },
+    "Parameters": {
+        "VPC": {
+            "Description": "The major VPC for this infrastracture",
+            "Type": "AWS::EC2::VPC::Id"
+        },
+        "NumberofASGs": {
+            "Description": "Number of Auto Scaling Groups to launch",
+            "Type": "Number",
+            "ConstraintDescription": "Must be a number with digits between 0 and 9."
+        },
+        "Subnet1": {
+            "Description": "The first public subnet",
+            "Type": "AWS::EC2::Subnet::Id"
+        },
+        "Subnet2": {
+            "Description": "The second public subnet",
+            "Type": "AWS::EC2::Subnet::Id"
+        },
+        "Subnet3": {
+            "Description": "The third public subnet",
+            "Type": "AWS::EC2::Subnet::Id"
+        },
+        "DBSubnet1": {
+            "Description": "The first private subnet, for the DB Cluster",
+            "Type": "AWS::EC2::Subnet::Id"
+        },
+        "DBSubnet2": {
+            "Description": "The second private subnet, for the DB Cluster",
+            "Type": "AWS::EC2::Subnet::Id"
+        },
+        "InstanceSG": {
+            "Description": "Security Group for the Launched Instances",
+            "Type": "AWS::EC2::SecurityGroup::Id"
+        },
+        "TargetGroup1": {
+            "Description": "The first target group",
+            "Type": "String"
+        },
+        "TargetGroup2": {
+            "Description": "The second target group",
+            "Type": "String"
+        },
+        "TargetGroup3": {
+            "Description": "The third target group",
+            "Type": "String"
+        },
+        "TargetGroup4": {
+            "Description": "The fourth target group",
+            "Type": "String"
+        },
+        "TargetGroup5": {
+            "Description": "The fifth target group",
+            "Type": "String"
+        },
+        "TargetGroup6": {
+            "Description": "The sixth target group",
+            "Type": "String"
+        },
+        "InstanceType": {
+            "Description": "WebServer EC2 instance type",
+            "Type": "String",
+            "Default": "t2.xlarge",
+            "AllowedValues": [
+                "t1.micro",
+                "t2.nano",
+                "t2.micro",
+                "t2.small",
+                "t2.medium",
+                "t2.large",
+                "t2.xlarge",
+                "t2.2xlarge",
+                "m1.small",
+                "m1.medium",
+                "m1.large",
+                "m1.xlarge",
+                "m2.xlarge",
+                "m2.2xlarge",
+                "m2.4xlarge",
+                "m3.medium",
+                "m3.large",
+                "m3.xlarge",
+                "m3.2xlarge",
+                "m4.large",
+                "m4.xlarge",
+                "m4.2xlarge",
+                "m4.4xlarge",
+                "m4.10xlarge",
+                "c1.medium",
+                "c1.xlarge",
+                "c3.large",
+                "c3.xlarge",
+                "c3.2xlarge",
+                "c3.4xlarge",
+                "c3.8xlarge",
+                "c4.large",
+                "c4.xlarge",
+                "c4.2xlarge",
+                "c4.4xlarge",
+                "c4.8xlarge",
+                "g2.2xlarge",
+                "g2.8xlarge",
+                "r3.large",
+                "r3.xlarge",
+                "r3.2xlarge",
+                "r3.4xlarge",
+                "r3.8xlarge",
+                "i2.xlarge",
+                "i2.2xlarge",
+                "i2.4xlarge",
+                "i2.8xlarge",
+                "d2.xlarge",
+                "d2.2xlarge",
+                "d2.4xlarge",
+                "d2.8xlarge",
+                "hi1.4xlarge",
+                "hs1.8xlarge",
+                "cr1.8xlarge",
+                "cc2.8xlarge",
+                "cg1.4xlarge"
+            ],
+            "ConstraintDescription": "must be a valid EC2 instance type."
+        },
+        "InstanceProfile": {
+            "Description": "The IAM Instance Profile to use",
+            "Type": "String",
+            "Default": "puppet-serverless-s3",
+            "ConstraintDescription": "must be the name of an Instance Profile."
+        },
+        "OperatorEMail": {
+            "Description": "EMail address to notify if there are any scaling operations",
+            "Type": "String"
+        },
+        "DspaceHostedZone": {
+            "Description": "Chose an existing Hostname",
+            "Type": "String",
+            "Default": "dddke.net"
+        },
+        "ALBRoute53DNSName": {
+            "Description": "DNS name for the ELB to be added in Route53. The final end endpoint for the ELB will be <ELBDNSName>.<AWS-Region>.<Environment>.<ELBHostedZone> .",
+            "Type": "String",
+            "Default": "dspacestaging"
+        },
+        "KeyName": {
+            "Description": "The EC2 Key Pair to allow SSH access to the instances",
+            "Type": "AWS::EC2::KeyPair::KeyName",
+            "ConstraintDescription": "must be the name of an existing EC2 KeyPair."
+        },
+        "SSHLocation": {
+            "Description": "The IP address range that can be used to SSH to the EC2 instances",
+            "Type": "String",
+            "MinLength": "9",
+            "MaxLength": "18",
+            "Default": "0.0.0.0/0",
+            "AllowedPattern": "(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})/(\\d{1,2})",
+            "ConstraintDescription": "must be a valid IP CIDR range of the form x.x.x.x/x."
+        },
+        "MasterUsername": {
+            "Description": "Database administration name. First character must be a letter and can not be 'root'.",
+            "Type": "String",
+            "Default": "dspace"
+        },
+        "MasterUserPassword": {
+            "NoEcho": "true",
+            "Description": "Database administration password. Minimum of 8 alphanumeric characters (pattern of [a-zA-Z0-9]).",
+            "Type": "String",
+            "MinLength": "8",
+            "AllowedPattern": "[a-zA-Z0-9!?]*",
+            "ConstraintDescription": "Must only contain upper and lowercase letters and numbers"
+        },
+        "BackupRetentionPeriod": {
+            "Description": "Enter Backup Retention Period in Days.",
+            "Type": "Number",
+            "Default": "7"
+        },
+        "MultiAvailabilityZone": {
+            "Description": "Enable Multi Availability Zones?",
+            "Type": "String",
+            "Default": "false",
+            "AllowedValues": [
+                "true",
+                "false"
+            ]
+        },
+        "TcpPort": {
+            "Description": "Enter RDS Listening TCP Port number.",
+            "Type": "Number",
+            "Default": "5432"
+        },
+        "PreferredBackupWindow": {
+            "Description": "Enter Preferred Backup Window Time (UTC).",
+            "Type": "String",
+            "Default": "17:00-19:00"
+        },
+        "PreferredMaintenanceWindow": {
+            "Description": "Enter Preferred Maintenance Window Time (UTC).",
+            "Type": "String",
+            "Default": "Sun:19:00-Sun:23:00"
+        },
+        "AllocatedStorage": {
+            "Default": "10",
+            "Description": "The size of the database (Gb)",
+            "Type": "Number",
+            "MinValue": "10",
+            "MaxValue": "6144",
+            "ConstraintDescription": "Must be between 10-6144"
+        },
+        "ConfigureProvisionedIops": {
+            "Description": "Configure Route 53 DNS Alias for RDS? Be sure a matching record doesn't already exist.",
+            "Type": "String",
+            "Default": "false",
+            "AllowedValues": [
+                "true",
+                "false"
+            ]
+        },
+        "SnapshotOnDelete": {
+            "Description": "Create a Snapshot on Delete?",
+            "Type": "String",
+            "Default": "true",
+            "AllowedValues": [
+                "true",
+                "false"
+            ]
+        },
+        "AutoMinorVersionUpgrade": {
+            "Description": "Allow Automatic Minor Version Upgrades?",
+            "Type": "String",
+            "Default": "true",
+            "AllowedValues": [
+                "true",
+                "false"
+            ]
+        },
+        "ProvisionedIopsValue": {
+            "Description": "(Skip if Not Using Provisioned IOPS) Set Provisioned IOPS 1000-30000.",
+            "Type": "Number",
+            "Default": "1000",
+            "MinValue": "1000",
+            "MaxValue": "30000"
+        },
+        "DatabaseClass": {
+            "Description": "Select Instance Type.",
+            "Type": "String",
+            "Default": "db.r4.large",
+            "AllowedValues": [
+                "db.t1.micro",
+                "db.t2.micro",
+                "db.t2.small",
+                "db.t2.medium",
+                "db.t2.large",
+                "db.m1.small",
+                "db.m1.medium",
+                "db.m1.large",
+                "db.m1.xlarge",
+                "db.m3.medium",
+                "db.m3.large",
+                "db.m3.xlarge",
+                "db.m3.2xlarge",
+                "db.m4.large",
+                "db.m4.xlarge",
+                "db.m4.2xlarge",
+                "db.m4.4xlarge",
+                "db.m4.10xlarge",
+                "db.r3.large",
+                "db.r3.xlarge",
+                "db.r3.2xlarge",
+                "db.r3.4xlarge",
+                "db.r3.8xlarge",
+                "db.r4.large",
+                "db.r4.xlarge"
+            ],
+            "ConstraintDescription": "Must be a valid EC2 instance type."
+        }
+    },
+    "Conditions": {
+        "Set1": {
+            "Fn::Equals": [
+                {
+                    "Ref": "NumberofASGs"
+                },
+                "1"
+            ]
+        },
+        "Set2": {
+            "Fn::Equals": [
+                {
+                    "Ref": "NumberofASGs"
+                },
+                "2"
+            ]
+        },
+        "Set3": {
+            "Fn::Equals": [
+                {
+                    "Ref": "NumberofASGs"
+                },
+                "3"
+            ]
+        },
+        "Set4": {
+            "Fn::Equals": [
+                {
+                    "Ref": "NumberofASGs"
+                },
+                "4"
+            ]
+        },
+        "Set5": {
+            "Fn::Equals": [
+                {
+                    "Ref": "NumberofASGs"
+                },
+                "5"
+            ]
+        },
+        "Set6": {
+            "Fn::Equals": [
+                {
+                    "Ref": "NumberofASGs"
+                },
+                "6"
+            ]
+        },
+        "Set7": {
+            "Fn::Equals": [
+                {
+                    "Ref": "NumberofASGs"
+                },
+                "7"
+            ]
+        },
+        "Set8": {
+            "Fn::Equals": [
+                {
+                    "Ref": "NumberofASGs"
+                },
+                "8"
+            ]
+        },
+        "Set9": {
+            "Fn::Equals": [
+                {
+                    "Ref": "NumberofASGs"
+                },
+                "9"
+            ]
+        },
+        "Set10": {
+            "Fn::Equals": [
+                {
+                    "Ref": "NumberofASGs"
+                },
+                "10"
+            ]
+        },
+        "Set_a": {
+            "Fn::Or": [
+                {
+                    "Condition": "Set1"
+                },
+                {
+                    "Condition": "Set2"
+                },
+                {
+                    "Condition": "Set3"
+                },
+                {
+                    "Condition": "Set4"
+                },
+                {
+                    "Condition": "Set5"
+                },
+                {
+                    "Condition": "Set6"
+                },
+                {
+                    "Condition": "Set7"
+                },
+                {
+                    "Condition": "Set8"
+                },
+                {
+                    "Condition": "Set9"
+                },
+                {
+                    "Condition": "Set10"
+                }
+            ]
+        },
+        "Set_b": {
+            "Fn::Or": [
+                {
+                    "Condition": "Set2"
+                },
+                {
+                    "Condition": "Set3"
+                },
+                {
+                    "Condition": "Set4"
+                },
+                {
+                    "Condition": "Set5"
+                },
+                {
+                    "Condition": "Set6"
+                },
+                {
+                    "Condition": "Set7"
+                },
+                {
+                    "Condition": "Set8"
+                },
+                {
+                    "Condition": "Set9"
+                },
+                {
+                    "Condition": "Set10"
+                }
+            ]
+        },
+        "Set_c": {
+            "Fn::Or": [
+                {
+                    "Condition": "Set3"
+                },
+                {
+                    "Condition": "Set4"
+                },
+                {
+                    "Condition": "Set5"
+                },
+                {
+                    "Condition": "Set6"
+                },
+                {
+                    "Condition": "Set7"
+                },
+                {
+                    "Condition": "Set8"
+                },
+                {
+                    "Condition": "Set9"
+                },
+                {
+                    "Condition": "Set10"
+                }
+            ]
+        },
+        "Set_d": {
+            "Fn::Or": [
+                {
+                    "Condition": "Set4"
+                },
+                {
+                    "Condition": "Set5"
+                },
+                {
+                    "Condition": "Set6"
+                },
+                {
+                    "Condition": "Set7"
+                },
+                {
+                    "Condition": "Set8"
+                },
+                {
+                    "Condition": "Set9"
+                },
+                {
+                    "Condition": "Set10"
+                }
+            ]
+        },
+        "Set_e": {
+            "Fn::Or": [
+                {
+                    "Condition": "Set5"
+                },
+                {
+                    "Condition": "Set6"
+                },
+                {
+                    "Condition": "Set7"
+                },
+                {
+                    "Condition": "Set8"
+                },
+                {
+                    "Condition": "Set9"
+                },
+                {
+                    "Condition": "Set10"
+                }
+            ]
+        },
+        "Set_f": {
+            "Fn::Or": [
+                {
+                    "Condition": "Set6"
+                },
+                {
+                    "Condition": "Set7"
+                },
+                {
+                    "Condition": "Set8"
+                },
+                {
+                    "Condition": "Set9"
+                },
+                {
+                    "Condition": "Set10"
+                }
+            ]
+        },
+        "Set_g": {
+            "Fn::Or": [
+                {
+                    "Condition": "Set7"
+                },
+                {
+                    "Condition": "Set8"
+                },
+                {
+                    "Condition": "Set9"
+                },
+                {
+                    "Condition": "Set10"
+                }
+            ]
+        },
+        "Set_h": {
+            "Fn::Or": [
+                {
+                    "Condition": "Set8"
+                },
+                {
+                    "Condition": "Set9"
+                },
+                {
+                    "Condition": "Set10"
+                }
+            ]
+        },
+        "Set_i": {
+            "Fn::Or": [
+                {
+                    "Condition": "Set9"
+                },
+                {
+                    "Condition": "Set10"
+                }
+            ]
+        },
+        "Set_j": {
+            "Fn::Equals": [
+                {
+                    "Ref": "NumberofASGs"
+                },
+                "10"
+            ]
+        }
+    },
+    "Mappings": {
+        "Settings": {
+            "Aurora-PostgreSQL": {
+                "Engine": "Aurora-PostgreSQL"
+            }
+        },
+        "Region2Examples": {
+            "us-east-1": {
+                "Examples": "https://s3.amazonaws.com/cloudformation-examples-us-east-1"
+            },
+            "us-west-2": {
+                "Examples": "https://s3-us-west-2.amazonaws.com/cloudformation-examples-us-west-2"
+            },
+            "us-west-1": {
+                "Examples": "https://s3-us-west-1.amazonaws.com/cloudformation-examples-us-west-1"
+            },
+            "eu-west-1": {
+                "Examples": "https://s3-eu-west-1.amazonaws.com/cloudformation-examples-eu-west-1"
+            },
+            "eu-west-2": {
+                "Examples": "https://s3-eu-west-2.amazonaws.com/cloudformation-examples-eu-west-2"
+            },
+            "eu-west-3": {
+                "Examples": "https://s3-eu-west-3.amazonaws.com/cloudformation-examples-eu-west-3"
+            },
+            "eu-central-1": {
+                "Examples": "https://s3-eu-central-1.amazonaws.com/cloudformation-examples-eu-central-1"
+            },
+            "ap-southeast-1": {
+                "Examples": "https://s3-ap-southeast-1.amazonaws.com/cloudformation-examples-ap-southeast-1"
+            },
+            "ap-northeast-1": {
+                "Examples": "https://s3-ap-northeast-1.amazonaws.com/cloudformation-examples-ap-northeast-1"
+            },
+            "ap-northeast-2": {
+                "Examples": "https://s3-ap-northeast-2.amazonaws.com/cloudformation-examples-ap-northeast-2"
+            },
+            "ap-southeast-2": {
+                "Examples": "https://s3-ap-southeast-2.amazonaws.com/cloudformation-examples-ap-southeast-2"
+            },
+            "ap-south-1": {
+                "Examples": "https://s3-ap-south-1.amazonaws.com/cloudformation-examples-ap-south-1"
+            },
+            "us-east-2": {
+                "Examples": "https://s3-us-east-2.amazonaws.com/cloudformation-examples-us-east-2"
+            },
+            "ca-central-1": {
+                "Examples": "https://s3-ca-central-1.amazonaws.com/cloudformation-examples-ca-central-1"
+            },
+            "sa-east-1": {
+                "Examples": "https://s3-sa-east-1.amazonaws.com/cloudformation-examples-sa-east-1"
+            },
+            "cn-north-1": {
+                "Examples": "https://s3.cn-north-1.amazonaws.com.cn/cloudformation-examples-cn-north-1"
+            },
+            "cn-northwest-1": {
+                "Examples": "https://s3.cn-northwest-1.amazonaws.com.cn/cloudformation-examples-cn-northwest-1"
+            }
+        },
+        "AWSInstanceType2Arch": {
+            "t1.micro": {
+                "Arch": "PV64"
+            },
+            "t2.nano": {
+                "Arch": "HVM64"
+            },
+            "t2.micro": {
+                "Arch": "HVM64"
+            },
+            "t2.small": {
+                "Arch": "HVM64"
+            },
+            "t2.medium": {
+                "Arch": "HVM64"
+            },
+            "t2.large": {
+                "Arch": "HVM64"
+            },
+            "t2.xlarge": {
+                "Arch": "HVM64"
+            },
+            "t2.2xlarge": {
+                "Arch": "HVM64"
+            },
+            "m1.small": {
+                "Arch": "PV64"
+            },
+            "m1.medium": {
+                "Arch": "PV64"
+            },
+            "m1.large": {
+                "Arch": "PV64"
+            },
+            "m1.xlarge": {
+                "Arch": "PV64"
+            },
+            "m2.xlarge": {
+                "Arch": "PV64"
+            },
+            "m2.2xlarge": {
+                "Arch": "PV64"
+            },
+            "m2.4xlarge": {
+                "Arch": "PV64"
+            },
+            "m3.medium": {
+                "Arch": "HVM64"
+            },
+            "m3.large": {
+                "Arch": "HVM64"
+            },
+            "m3.xlarge": {
+                "Arch": "HVM64"
+            },
+            "m3.2xlarge": {
+                "Arch": "HVM64"
+            },
+            "m4.large": {
+                "Arch": "HVM64"
+            },
+            "m4.xlarge": {
+                "Arch": "HVM64"
+            },
+            "m4.2xlarge": {
+                "Arch": "HVM64"
+            },
+            "m4.4xlarge": {
+                "Arch": "HVM64"
+            },
+            "m4.10xlarge": {
+                "Arch": "HVM64"
+            },
+            "c1.medium": {
+                "Arch": "PV64"
+            },
+            "c1.xlarge": {
+                "Arch": "PV64"
+            },
+            "c3.large": {
+                "Arch": "HVM64"
+            },
+            "c3.xlarge": {
+                "Arch": "HVM64"
+            },
+            "c3.2xlarge": {
+                "Arch": "HVM64"
+            },
+            "c3.4xlarge": {
+                "Arch": "HVM64"
+            },
+            "c3.8xlarge": {
+                "Arch": "HVM64"
+            },
+            "c4.large": {
+                "Arch": "HVM64"
+            },
+            "c4.xlarge": {
+                "Arch": "HVM64"
+            },
+            "c4.2xlarge": {
+                "Arch": "HVM64"
+            },
+            "c4.4xlarge": {
+                "Arch": "HVM64"
+            },
+            "c4.8xlarge": {
+                "Arch": "HVM64"
+            },
+            "g2.2xlarge": {
+                "Arch": "HVMG2"
+            },
+            "g2.8xlarge": {
+                "Arch": "HVMG2"
+            },
+            "r3.large": {
+                "Arch": "HVM64"
+            },
+            "r3.xlarge": {
+                "Arch": "HVM64"
+            },
+            "r3.2xlarge": {
+                "Arch": "HVM64"
+            },
+            "r3.4xlarge": {
+                "Arch": "HVM64"
+            },
+            "r3.8xlarge": {
+                "Arch": "HVM64"
+            },
+            "i2.xlarge": {
+                "Arch": "HVM64"
+            },
+            "i2.2xlarge": {
+                "Arch": "HVM64"
+            },
+            "i2.4xlarge": {
+                "Arch": "HVM64"
+            },
+            "i2.8xlarge": {
+                "Arch": "HVM64"
+            },
+            "d2.xlarge": {
+                "Arch": "HVM64"
+            },
+            "d2.2xlarge": {
+                "Arch": "HVM64"
+            },
+            "d2.4xlarge": {
+                "Arch": "HVM64"
+            },
+            "d2.8xlarge": {
+                "Arch": "HVM64"
+            },
+            "hi1.4xlarge": {
+                "Arch": "HVM64"
+            },
+            "hs1.8xlarge": {
+                "Arch": "HVM64"
+            },
+            "cr1.8xlarge": {
+                "Arch": "HVM64"
+            },
+            "cc2.8xlarge": {
+                "Arch": "HVM64"
+            }
+        },
+        "AWSInstanceType2NATArch": {
+            "t1.micro": {
+                "Arch": "NATPV64"
+            },
+            "t2.nano": {
+                "Arch": "NATHVM64"
+            },
+            "t2.micro": {
+                "Arch": "NATHVM64"
+            },
+            "t2.small": {
+                "Arch": "NATHVM64"
+            },
+            "t2.medium": {
+                "Arch": "NATHVM64"
+            },
+            "t2.large": {
+                "Arch": "NATHVM64"
+            },
+            "m1.small": {
+                "Arch": "NATPV64"
+            },
+            "m1.medium": {
+                "Arch": "NATPV64"
+            },
+            "m1.large": {
+                "Arch": "NATPV64"
+            },
+            "m1.xlarge": {
+                "Arch": "NATPV64"
+            },
+            "m2.xlarge": {
+                "Arch": "NATPV64"
+            },
+            "m2.2xlarge": {
+                "Arch": "NATPV64"
+            },
+            "m2.4xlarge": {
+                "Arch": "NATPV64"
+            },
+            "m3.medium": {
+                "Arch": "NATHVM64"
+            },
+            "m3.large": {
+                "Arch": "NATHVM64"
+            },
+            "m3.xlarge": {
+                "Arch": "NATHVM64"
+            },
+            "m3.2xlarge": {
+                "Arch": "NATHVM64"
+            },
+            "m4.large": {
+                "Arch": "NATHVM64"
+            },
+            "m4.xlarge": {
+                "Arch": "NATHVM64"
+            },
+            "m4.2xlarge": {
+                "Arch": "NATHVM64"
+            },
+            "m4.4xlarge": {
+                "Arch": "NATHVM64"
+            },
+            "m4.10xlarge": {
+                "Arch": "NATHVM64"
+            },
+            "c1.medium": {
+                "Arch": "NATPV64"
+            },
+            "c1.xlarge": {
+                "Arch": "NATPV64"
+            },
+            "c3.large": {
+                "Arch": "NATHVM64"
+            },
+            "c3.xlarge": {
+                "Arch": "NATHVM64"
+            },
+            "c3.2xlarge": {
+                "Arch": "NATHVM64"
+            },
+            "c3.4xlarge": {
+                "Arch": "NATHVM64"
+            },
+            "c3.8xlarge": {
+                "Arch": "NATHVM64"
+            },
+            "c4.large": {
+                "Arch": "NATHVM64"
+            },
+            "c4.xlarge": {
+                "Arch": "NATHVM64"
+            },
+            "c4.2xlarge": {
+                "Arch": "NATHVM64"
+            },
+            "c4.4xlarge": {
+                "Arch": "NATHVM64"
+            },
+            "c4.8xlarge": {
+                "Arch": "NATHVM64"
+            },
+            "g2.2xlarge": {
+                "Arch": "NATHVMG2"
+            },
+            "g2.8xlarge": {
+                "Arch": "NATHVMG2"
+            },
+            "r3.large": {
+                "Arch": "NATHVM64"
+            },
+            "r3.xlarge": {
+                "Arch": "NATHVM64"
+            },
+            "r3.2xlarge": {
+                "Arch": "NATHVM64"
+            },
+            "r3.4xlarge": {
+                "Arch": "NATHVM64"
+            },
+            "r3.8xlarge": {
+                "Arch": "NATHVM64"
+            },
+            "i2.xlarge": {
+                "Arch": "NATHVM64"
+            },
+            "i2.2xlarge": {
+                "Arch": "NATHVM64"
+            },
+            "i2.4xlarge": {
+                "Arch": "NATHVM64"
+            },
+            "i2.8xlarge": {
+                "Arch": "NATHVM64"
+            },
+            "d2.xlarge": {
+                "Arch": "NATHVM64"
+            },
+            "d2.2xlarge": {
+                "Arch": "NATHVM64"
+            },
+            "d2.4xlarge": {
+                "Arch": "NATHVM64"
+            },
+            "d2.8xlarge": {
+                "Arch": "NATHVM64"
+            },
+            "hi1.4xlarge": {
+                "Arch": "NATHVM64"
+            },
+            "hs1.8xlarge": {
+                "Arch": "NATHVM64"
+            },
+            "cr1.8xlarge": {
+                "Arch": "NATHVM64"
+            },
+            "cc2.8xlarge": {
+                "Arch": "NATHVM64"
+            }
+        },
+        "AWSRegionArch2AMI": {
+            "us-east-1": {
+                "PV64": "NOT_SUPPORTED",
+                "HVM64": "ami-3dec9947",
+                "HVMG2": "NOT_SUPPORTED"
+            },
+            "us-west-2": {
+                "PV64": "NOT_SUPPORTED",
+                "HVM64": "ami-a2e544da",
+                "HVMG2": "NOT_SUPPORTED"
+            },
+            "us-west-1": {
+                "PV64": "NOT_SUPPORTED",
+                "HVM64": "ami-1a17137a",
+                "HVMG2": "NOT_SUPPORTED"
+            },
+            "eu-west-1": {
+                "PV64": "NOT_SUPPORTED",
+                "HVM64": "ami-63b0341a",
+                "HVMG2": "NOT_SUPPORTED"
+            },
+            "eu-west-2": {
+                "PV64": "NOT_SUPPORTED",
+                "HVM64": "ami-22415846",
+                "HVMG2": "NOT_SUPPORTED"
+            },
+            "eu-west-3": {
+                "PV64": "NOT_SUPPORTED",
+                "HVM64": "ami-794bfc04",
+                "HVMG2": "NOT_SUPPORTED"
+            },
+            "eu-central-1": {
+                "PV64": "NOT_SUPPORTED",
+                "HVM64": "ami-13b8337c",
+                "HVMG2": "NOT_SUPPORTED"
+            },
+            "ap-northeast-1": {
+                "PV64": "NOT_SUPPORTED",
+                "HVM64": "ami-42ca4724",
+                "HVMG2": "NOT_SUPPORTED"
+            },
+            "ap-northeast-2": {
+                "PV64": "NOT_SUPPORTED",
+                "HVM64": "ami-5027813e",
+                "HVMG2": "NOT_SUPPORTED"
+            },
+            "ap-southeast-1": {
+                "PV64": "NOT_SUPPORTED",
+                "HVM64": "ami-29aece55",
+                "HVMG2": "NOT_SUPPORTED"
+            },
+            "ap-southeast-2": {
+                "PV64": "NOT_SUPPORTED",
+                "HVM64": "ami-9b8076f9",
+                "HVMG2": "NOT_SUPPORTED"
+            },
+            "ap-south-1": {
+                "PV64": "NOT_SUPPORTED",
+                "HVM64": "ami-84dc94eb",
+                "HVMG2": "NOT_SUPPORTED"
+            },
+            "us-east-2": {
+                "PV64": "NOT_SUPPORTED",
+                "HVM64": "ami-597d553c",
+                "HVMG2": "NOT_SUPPORTED"
+            },
+            "ca-central-1": {
+                "PV64": "NOT_SUPPORTED",
+                "HVM64": "ami-b0c67cd4",
+                "HVMG2": "NOT_SUPPORTED"
+            },
+            "sa-east-1": {
+                "PV64": "NOT_SUPPORTED",
+                "HVM64": "\tami-8181c7ed",
+                "HVMG2": "NOT_SUPPORTED"
+            },
+            "cn-north-1": {
+                "PV64": "NOT_SUPPORTED",
+                "HVM64": "ami-fc25f791",
+                "HVMG2": "NOT_SUPPORTED"
+            },
+            "cn-northwest-1": {
+                "PV64": "NOT_SUPPORTED",
+                "HVM64": "ami-e5b0a587",
+                "HVMG2": "NOT_SUPPORTED"
+            }
+        }
+    },
+    "Resources": {
+        "ASG1": {
+            "Type": "AWS::AutoScaling::AutoScalingGroup",
+            "Condition": "Set_a",
+            "Properties": {
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "dspace_project_staging_dspace0 - dspace4",
+                        "PropagateAtLaunch": "true"
+                    }
+                ],
+                "DesiredCapacity": "1",
+                "MaxSize": "5",
+                "MinSize": "1",
+                "Cooldown": "60",
+                "VPCZoneIdentifier": [
+                    {
+                        "Ref": "Subnet1"
+                    },
+                    {
+                        "Ref": "Subnet2"
+                    },
+                    {
+                        "Ref": "Subnet3"
+                    }
+                ],
+                "TargetGroupARNs": [
+                    {
+                        "Ref": "TargetGroup1"
+                    }
+                ],
+                "LaunchConfigurationName": {
+                    "Ref": "LaunchConfig1"
+                },
+                "NotificationConfiguration": {
+                    "TopicARN": {
+                        "Ref": "NotificationTopic"
+                    },
+                    "NotificationTypes": [
+                        "autoscaling:EC2_INSTANCE_LAUNCH",
+                        "autoscaling:EC2_INSTANCE_LAUNCH_ERROR",
+                        "autoscaling:EC2_INSTANCE_TERMINATE",
+                        "autoscaling:EC2_INSTANCE_TERMINATE_ERROR"
+                    ]
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "b661e139-47ce-4298-8c53-266dad8e4672"
+                }
+            },
+            "DependsOn": [
+                "DspaceDb"
+            ]
+        },
+        "ASG2": {
+            "Type": "AWS::AutoScaling::AutoScalingGroup",
+            "Condition": "Set_b",
+            "Properties": {
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "dspace_project_staging_dspace5 - dspace9",
+                        "PropagateAtLaunch": "true"
+                    }
+                ],
+                "DesiredCapacity": "1",
+                "MaxSize": "5",
+                "MinSize": "1",
+                "Cooldown": "60",
+                "VPCZoneIdentifier": [
+                    {
+                        "Ref": "Subnet1"
+                    },
+                    {
+                        "Ref": "Subnet2"
+                    },
+                    {
+                        "Ref": "Subnet3"
+                    }
+                ],
+                "TargetGroupARNs": [
+                    {
+                        "Ref": "TargetGroup2"
+                    }
+                ],
+                "LaunchConfigurationName": {
+                    "Ref": "LaunchConfig2"
+                },
+                "NotificationConfiguration": {
+                    "TopicARN": {
+                        "Ref": "NotificationTopic"
+                    },
+                    "NotificationTypes": [
+                        "autoscaling:EC2_INSTANCE_LAUNCH",
+                        "autoscaling:EC2_INSTANCE_LAUNCH_ERROR",
+                        "autoscaling:EC2_INSTANCE_TERMINATE",
+                        "autoscaling:EC2_INSTANCE_TERMINATE_ERROR"
+                    ]
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "b80f8290-8631-4feb-9181-c5e144697574"
+                }
+            },
+            "DependsOn": [
+                "DspaceDb"
+            ]
+        },
+        "ASG3": {
+            "Type": "AWS::AutoScaling::AutoScalingGroup",
+            "Condition": "Set_c",
+            "Properties": {
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "dspace_project_staging_dspace10 - dspace14",
+                        "PropagateAtLaunch": "true"
+                    }
+                ],
+                "DesiredCapacity": "1",
+                "MaxSize": "5",
+                "MinSize": "1",
+                "Cooldown": "60",
+                "VPCZoneIdentifier": [
+                    {
+                        "Ref": "Subnet1"
+                    },
+                    {
+                        "Ref": "Subnet2"
+                    },
+                    {
+                        "Ref": "Subnet3"
+                    }
+                ],
+                "TargetGroupARNs": [
+                    {
+                        "Ref": "TargetGroup3"
+                    }
+                ],
+                "LaunchConfigurationName": {
+                    "Ref": "LaunchConfig3"
+                },
+                "NotificationConfiguration": {
+                    "TopicARN": {
+                        "Ref": "NotificationTopic"
+                    },
+                    "NotificationTypes": [
+                        "autoscaling:EC2_INSTANCE_LAUNCH",
+                        "autoscaling:EC2_INSTANCE_LAUNCH_ERROR",
+                        "autoscaling:EC2_INSTANCE_TERMINATE",
+                        "autoscaling:EC2_INSTANCE_TERMINATE_ERROR"
+                    ]
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "554d951b-a4b5-4894-ac6c-05a84118ba92"
+                }
+            },
+            "DependsOn": [
+                "DspaceDb"
+            ]
+        },
+        "ASG4": {
+            "Type": "AWS::AutoScaling::AutoScalingGroup",
+            "Condition": "Set_d",
+            "Properties": {
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "dspace_project_staging_dspace15 - dspace19",
+                        "PropagateAtLaunch": "true"
+                    }
+                ],
+                "DesiredCapacity": "1",
+                "MaxSize": "5",
+                "MinSize": "1",
+                "Cooldown": "60",
+                "VPCZoneIdentifier": [
+                    {
+                        "Ref": "Subnet1"
+                    },
+                    {
+                        "Ref": "Subnet2"
+                    },
+                    {
+                        "Ref": "Subnet3"
+                    }
+                ],
+                "TargetGroupARNs": [
+                    {
+                        "Ref": "TargetGroup4"
+                    }
+                ],
+                "LaunchConfigurationName": {
+                    "Ref": "LaunchConfig4"
+                },
+                "NotificationConfiguration": {
+                    "TopicARN": {
+                        "Ref": "NotificationTopic"
+                    },
+                    "NotificationTypes": [
+                        "autoscaling:EC2_INSTANCE_LAUNCH",
+                        "autoscaling:EC2_INSTANCE_LAUNCH_ERROR",
+                        "autoscaling:EC2_INSTANCE_TERMINATE",
+                        "autoscaling:EC2_INSTANCE_TERMINATE_ERROR"
+                    ]
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "a49dc259-e412-431f-9466-52a6369d6013"
+                }
+            },
+            "DependsOn": [
+                "DspaceDb"
+            ]
+        },
+        "ASG5": {
+            "Type": "AWS::AutoScaling::AutoScalingGroup",
+            "Condition": "Set_e",
+            "Properties": {
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "dspace_project_staging_dspace20 - dspace24",
+                        "PropagateAtLaunch": "true"
+                    }
+                ],
+                "DesiredCapacity": "1",
+                "MaxSize": "5",
+                "MinSize": "1",
+                "Cooldown": "60",
+                "VPCZoneIdentifier": [
+                    {
+                        "Ref": "Subnet1"
+                    },
+                    {
+                        "Ref": "Subnet2"
+                    },
+                    {
+                        "Ref": "Subnet3"
+                    }
+                ],
+                "TargetGroupARNs": [
+                    {
+                        "Ref": "TargetGroup5"
+                    }
+                ],
+                "LaunchConfigurationName": {
+                    "Ref": "LaunchConfig5"
+                },
+                "NotificationConfiguration": {
+                    "TopicARN": {
+                        "Ref": "NotificationTopic"
+                    },
+                    "NotificationTypes": [
+                        "autoscaling:EC2_INSTANCE_LAUNCH",
+                        "autoscaling:EC2_INSTANCE_LAUNCH_ERROR",
+                        "autoscaling:EC2_INSTANCE_TERMINATE",
+                        "autoscaling:EC2_INSTANCE_TERMINATE_ERROR"
+                    ]
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "a1489d34-cf12-4efc-ad4d-91f31730f102"
+                }
+            },
+            "DependsOn": [
+                "DspaceDb"
+            ]
+        },
+        "ASG6": {
+            "Type": "AWS::AutoScaling::AutoScalingGroup",
+            "Condition": "Set_f",
+            "Properties": {
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "dspace_project_staging_dspace25 - dspace29",
+                        "PropagateAtLaunch": "true"
+                    }
+                ],
+                "DesiredCapacity": "1",
+                "MaxSize": "5",
+                "MinSize": "1",
+                "Cooldown": "60",
+                "VPCZoneIdentifier": [
+                    {
+                        "Ref": "Subnet1"
+                    },
+                    {
+                        "Ref": "Subnet2"
+                    },
+                    {
+                        "Ref": "Subnet3"
+                    }
+                ],
+                "TargetGroupARNs": [
+                    {
+                        "Ref": "TargetGroup6"
+                    }
+                ],
+                "LaunchConfigurationName": {
+                    "Ref": "LaunchConfig6"
+                },
+                "NotificationConfiguration": {
+                    "TopicARN": {
+                        "Ref": "NotificationTopic"
+                    },
+                    "NotificationTypes": [
+                        "autoscaling:EC2_INSTANCE_LAUNCH",
+                        "autoscaling:EC2_INSTANCE_LAUNCH_ERROR",
+                        "autoscaling:EC2_INSTANCE_TERMINATE",
+                        "autoscaling:EC2_INSTANCE_TERMINATE_ERROR"
+                    ]
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "5386bc2e-00c2-4718-b4b7-b5db5d25ab8c"
+                }
+            },
+            "DependsOn": [
+                "DspaceDb"
+            ]
+        },
+        "ASG7": {
+            "Type": "AWS::AutoScaling::AutoScalingGroup",
+            "Condition": "Set_g",
+            "Properties": {
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "dspace_project_staging_dspace30 - dspace34",
+                        "PropagateAtLaunch": "true"
+                    }
+                ],
+                "DesiredCapacity": "1",
+                "MaxSize": "5",
+                "MinSize": "1",
+                "Cooldown": "60",
+                "VPCZoneIdentifier": [
+                    {
+                        "Ref": "Subnet1"
+                    },
+                    {
+                        "Ref": "Subnet2"
+                    },
+                    {
+                        "Ref": "Subnet3"
+                    }
+                ],
+                "TargetGroupARNs": [
+                    {
+                        "Ref": "TargetGroup6"
+                    }
+                ],
+                "LaunchConfigurationName": {
+                    "Ref": "LaunchConfig7"
+                },
+                "NotificationConfiguration": {
+                    "TopicARN": {
+                        "Ref": "NotificationTopic"
+                    },
+                    "NotificationTypes": [
+                        "autoscaling:EC2_INSTANCE_LAUNCH",
+                        "autoscaling:EC2_INSTANCE_LAUNCH_ERROR",
+                        "autoscaling:EC2_INSTANCE_TERMINATE",
+                        "autoscaling:EC2_INSTANCE_TERMINATE_ERROR"
+                    ]
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "b1553aee-5865-49a6-85ec-94909c355a55"
+                }
+            },
+            "DependsOn": [
+                "DspaceDb"
+            ]
+        },
+        "ASG8": {
+            "Type": "AWS::AutoScaling::AutoScalingGroup",
+            "Condition": "Set_h",
+            "Properties": {
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "dspace_project_staging_dspace35 - dspace39",
+                        "PropagateAtLaunch": "true"
+                    }
+                ],
+                "DesiredCapacity": "1",
+                "MaxSize": "5",
+                "MinSize": "1",
+                "Cooldown": "60",
+                "VPCZoneIdentifier": [
+                    {
+                        "Ref": "Subnet1"
+                    },
+                    {
+                        "Ref": "Subnet2"
+                    },
+                    {
+                        "Ref": "Subnet3"
+                    }
+                ],
+                "TargetGroupARNs": [
+                    {
+                        "Ref": "TargetGroup6"
+                    }
+                ],
+                "LaunchConfigurationName": {
+                    "Ref": "LaunchConfig8"
+                },
+                "NotificationConfiguration": {
+                    "TopicARN": {
+                        "Ref": "NotificationTopic"
+                    },
+                    "NotificationTypes": [
+                        "autoscaling:EC2_INSTANCE_LAUNCH",
+                        "autoscaling:EC2_INSTANCE_LAUNCH_ERROR",
+                        "autoscaling:EC2_INSTANCE_TERMINATE",
+                        "autoscaling:EC2_INSTANCE_TERMINATE_ERROR"
+                    ]
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "6a2ef2ae-503b-43b3-8363-13fc73b7b165"
+                }
+            },
+            "DependsOn": [
+                "DspaceDb"
+            ]
+        },
+        "ASG9": {
+            "Type": "AWS::AutoScaling::AutoScalingGroup",
+            "Condition": "Set_i",
+            "Properties": {
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "dspace_project_staging_dspace40 - dspace44",
+                        "PropagateAtLaunch": "true"
+                    }
+                ],
+                "DesiredCapacity": "1",
+                "MaxSize": "5",
+                "MinSize": "1",
+                "Cooldown": "60",
+                "VPCZoneIdentifier": [
+                    {
+                        "Ref": "Subnet1"
+                    },
+                    {
+                        "Ref": "Subnet2"
+                    },
+                    {
+                        "Ref": "Subnet3"
+                    }
+                ],
+                "TargetGroupARNs": [
+                    {
+                        "Ref": "TargetGroup6"
+                    }
+                ],
+                "LaunchConfigurationName": {
+                    "Ref": "LaunchConfig9"
+                },
+                "NotificationConfiguration": {
+                    "TopicARN": {
+                        "Ref": "NotificationTopic"
+                    },
+                    "NotificationTypes": [
+                        "autoscaling:EC2_INSTANCE_LAUNCH",
+                        "autoscaling:EC2_INSTANCE_LAUNCH_ERROR",
+                        "autoscaling:EC2_INSTANCE_TERMINATE",
+                        "autoscaling:EC2_INSTANCE_TERMINATE_ERROR"
+                    ]
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "abbe216f-ce9a-4509-a6bb-4f74bddfa1bf"
+                }
+            },
+            "DependsOn": [
+                "DspaceDb"
+            ]
+        },
+        "ASG10": {
+            "Type": "AWS::AutoScaling::AutoScalingGroup",
+            "Condition": "Set_j",
+            "Properties": {
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "dspace_project_staging_dspace45 - dspace49",
+                        "PropagateAtLaunch": "true"
+                    }
+                ],
+                "DesiredCapacity": "1",
+                "MaxSize": "5",
+                "MinSize": "1",
+                "Cooldown": "60",
+                "VPCZoneIdentifier": [
+                    {
+                        "Ref": "Subnet1"
+                    },
+                    {
+                        "Ref": "Subnet2"
+                    },
+                    {
+                        "Ref": "Subnet3"
+                    }
+                ],
+                "TargetGroupARNs": [
+                    {
+                        "Ref": "TargetGroup6"
+                    }
+                ],
+                "LaunchConfigurationName": {
+                    "Ref": "LaunchConfig10"
+                },
+                "NotificationConfiguration": {
+                    "TopicARN": {
+                        "Ref": "NotificationTopic"
+                    },
+                    "NotificationTypes": [
+                        "autoscaling:EC2_INSTANCE_LAUNCH",
+                        "autoscaling:EC2_INSTANCE_LAUNCH_ERROR",
+                        "autoscaling:EC2_INSTANCE_TERMINATE",
+                        "autoscaling:EC2_INSTANCE_TERMINATE_ERROR"
+                    ]
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "87ec8c47-06f1-4010-9a25-8563870315a9"
+                }
+            },
+            "DependsOn": [
+                "DspaceDb"
+            ]
+        },
+        "LaunchConfig1": {
+            "Type": "AWS::AutoScaling::LaunchConfiguration",
+            "Condition": "Set_a",
+            "Properties": {
+                "ImageId": {
+                    "Fn::FindInMap": [
+                        "AWSRegionArch2AMI",
+                        {
+                            "Ref": "AWS::Region"
+                        },
+                        {
+                            "Fn::FindInMap": [
+                                "AWSInstanceType2Arch",
+                                {
+                                    "Ref": "InstanceType"
+                                },
+                                "Arch"
+                            ]
+                        }
+                    ]
+                },
+                "InstanceType": {
+                    "Ref": "InstanceType"
+                },
+                "InstanceMonitoring": "false",
+                "AssociatePublicIpAddress": "true",
+                "BlockDeviceMappings": [
+                    {
+                        "DeviceName": "/dev/sda1",
+                        "Ebs": {
+                            "VolumeSize": "70",
+                            "VolumeType": "gp2",
+                            "Iops": "100"
+                        }
+                    }
+                ],
+                "KeyName": {
+                    "Ref": "KeyName"
+                },
+                "IamInstanceProfile": {
+                    "Ref": "InstanceProfile"
+                },
+                "SecurityGroups": [
+                    {
+                        "Ref": "InstanceSG"
+                    }
+                ],
+                "UserData": {
+                    "Fn::Base64": {
+                        "Fn::Join": [
+                            "",
+                            [
+                                "From Mukumbu Mon Feb  5 11:00 2018\n",
+                                "Content-Type: multipart/mixed; boundary=\"==BOUNDARY==\"\n",
+                                "MIME-Version: 1.0\n",
+                                "--==BOUNDARY==\n",
+                                "MIME-Version: 1.0\n",
+                                "Content-Type: text/x-shellscript; charset=\"us-ascii\"\n",
+                                "#!/bin/bash\n",
+                                "echo \"`curl http://169.254.169.254/latest/meta-data/public-ipv4`  dspaceserver1.dddke.net dspaceserver1\" >> /etc/hosts\n",
+                                "echo \"dspaceserver1\" >> /etc/hostname\n",
+                                "sysctl kernel.hostname=dspaceserver1\n",
+                                "echo DBENDPOINT=",
+                                {
+                                    "Fn::GetAtt": [
+                                        "DspaceDb",
+                                        "Endpoint.Address"
+                                    ]
+                                },
+                                " >> /etc/environment\n",
+                                "source /etc/environment\n",
+                                "echo \"export facter_db_endpoint=$DBENDPOINT\" >> ~/.bashrc\n",
+                                "source ~/.bashrc\n",
+                                "\n",
+                                "--==BOUNDARY==\n",
+                                "MIME-Version: 1.0\n",
+                                "Content-Type: text/x-include-url; charset=\"us-ascii\"\n",
+                                "#include https://raw.githubusercontent.com/dspaceproject/dspacedirect-pilot/master/cloud-init.yaml?token=AerL0k7p2zFgbAtvjQswL6wKWJ7BvXxUks5annshwA%3D%3D\n",
+                                "\n",
+                                "--==BOUNDARY==\n",
+                                "MIME-Version: 1.0\n",
+                                "Content-Type: text/x-include-url; charset=\"us-ascii\"\n",
+                                "#include https://raw.githubusercontent.com/dspaceproject/NetdataRepo/datadog/datadog.sh\n",
+                                "\n"
+                            ]
+                        ]
+                    }
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "89968c50-09dc-472c-91c4-29a0f16357eb"
+                }
+            }
+        },
+        "LaunchConfig2": {
+            "Type": "AWS::AutoScaling::LaunchConfiguration",
+            "Condition": "Set_b",
+            "Properties": {
+                "ImageId": {
+                    "Fn::FindInMap": [
+                        "AWSRegionArch2AMI",
+                        {
+                            "Ref": "AWS::Region"
+                        },
+                        {
+                            "Fn::FindInMap": [
+                                "AWSInstanceType2Arch",
+                                {
+                                    "Ref": "InstanceType"
+                                },
+                                "Arch"
+                            ]
+                        }
+                    ]
+                },
+                "InstanceType": {
+                    "Ref": "InstanceType"
+                },
+                "InstanceMonitoring": "false",
+                "AssociatePublicIpAddress": "true",
+                "BlockDeviceMappings": [
+                    {
+                        "DeviceName": "/dev/sda1",
+                        "Ebs": {
+                            "VolumeSize": "70",
+                            "VolumeType": "gp2",
+                            "Iops": "100"
+                        }
+                    }
+                ],
+                "KeyName": {
+                    "Ref": "KeyName"
+                },
+                "IamInstanceProfile": {
+                    "Ref": "InstanceProfile"
+                },
+                "SecurityGroups": [
+                    {
+                        "Ref": "InstanceSG"
+                    }
+                ],
+                "UserData": {
+                    "Fn::Base64": {
+                        "Fn::Join": [
+                            "",
+                            [
+                                "From Mukumbu Mon Feb  5 11:00 2018\n",
+                                "Content-Type: multipart/mixed; boundary=\"==BOUNDARY==\"\n",
+                                "MIME-Version: 1.0\n",
+                                "--==BOUNDARY==\n",
+                                "MIME-Version: 1.0\n",
+                                "Content-Type: text/x-shellscript; charset=\"us-ascii\"\n",
+                                "#!/bin/bash\n",
+                                "echo \"`curl http://169.254.169.254/latest/meta-data/public-ipv4`  dspaceserver2.dddke.net dspaceserver2\" >> /etc/hosts\n",
+                                "echo \"dspaceserver2\" >> /etc/hostname\n",
+                                "sysctl kernel.hostname=dspaceserver2\n",
+                                "echo DBENDPOINT=",
+                                {
+                                    "Fn::GetAtt": [
+                                        "DspaceDb",
+                                        "Endpoint.Address"
+                                    ]
+                                },
+                                " >> /etc/environment\n",
+                                "source /etc/environment\n",
+                                "echo \"export facter_db_endpoint=$DBENDPOINT\" >> ~/.bashrc\n",
+                                "source ~/.bashrc\n",
+                                "\n",
+                                "--==BOUNDARY==\n",
+                                "MIME-Version: 1.0\n",
+                                "Content-Type: text/x-include-url; charset=\"us-ascii\"\n",
+                                "#include https://raw.githubusercontent.com/dspaceproject/dspacedirect-pilot/master/cloud-init.yaml?token=AerL0k7p2zFgbAtvjQswL6wKWJ7BvXxUks5annshwA%3D%3D\n",
+                                "\n",
+                                "\n",
+                                "--==BOUNDARY==\n",
+                                "MIME-Version: 1.0\n",
+                                "Content-Type: text/x-include-url; charset=\"us-ascii\"\n",
+                                "#include https://raw.githubusercontent.com/dspaceproject/NetdataRepo/datadog/datadog.sh\n",
+                                "\n"
+                            ]
+                        ]
+                    }
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "85a39e67-3e65-414a-aa9a-9c77678bf586"
+                }
+            }
+        },
+        "LaunchConfig3": {
+            "Type": "AWS::AutoScaling::LaunchConfiguration",
+            "Condition": "Set_c",
+            "Properties": {
+                "ImageId": {
+                    "Fn::FindInMap": [
+                        "AWSRegionArch2AMI",
+                        {
+                            "Ref": "AWS::Region"
+                        },
+                        {
+                            "Fn::FindInMap": [
+                                "AWSInstanceType2Arch",
+                                {
+                                    "Ref": "InstanceType"
+                                },
+                                "Arch"
+                            ]
+                        }
+                    ]
+                },
+                "InstanceType": {
+                    "Ref": "InstanceType"
+                },
+                "InstanceMonitoring": "false",
+                "AssociatePublicIpAddress": "true",
+                "BlockDeviceMappings": [
+                    {
+                        "DeviceName": "/dev/sda1",
+                        "Ebs": {
+                            "VolumeSize": "70",
+                            "VolumeType": "gp2",
+                            "Iops": "100"
+                        }
+                    }
+                ],
+                "KeyName": {
+                    "Ref": "KeyName"
+                },
+                "IamInstanceProfile": {
+                    "Ref": "InstanceProfile"
+                },
+                "SecurityGroups": [
+                    {
+                        "Ref": "InstanceSG"
+                    }
+                ],
+                "UserData": {
+                    "Fn::Base64": {
+                        "Fn::Join": [
+                            "",
+                            [
+                                "From Mukumbu Mon Feb  5 11:00 2018\n",
+                                "Content-Type: multipart/mixed; boundary=\"==BOUNDARY==\"\n",
+                                "MIME-Version: 1.0\n",
+                                "--==BOUNDARY==\n",
+                                "MIME-Version: 1.0\n",
+                                "Content-Type: text/x-shellscript; charset=\"us-ascii\"\n",
+                                "#!/bin/bash\n",
+                                "echo \"`curl http://169.254.169.254/latest/meta-data/public-ipv4`  dspaceserver3.dddke.net dspaceserver3\" >> /etc/hosts\n",
+                                "echo \"dspaceserver3\" >> /etc/hostname\n",
+                                "sysctl kernel.hostname=dspaceserver3\n",
+                                "echo DBENDPOINT=",
+                                {
+                                    "Fn::GetAtt": [
+                                        "DspaceDb",
+                                        "Endpoint.Address"
+                                    ]
+                                },
+                                " >> /etc/environment\n",
+                                "source /etc/environment\n",
+                                "echo \"export facter_db_endpoint=$DBENDPOINT\" >> ~/.bashrc\n",
+                                "source ~/.bashrc\n",
+                                "\n",
+                                "--==BOUNDARY==\n",
+                                "MIME-Version: 1.0\n",
+                                "Content-Type: text/x-include-url; charset=\"us-ascii\"\n",
+                                "#include https://raw.githubusercontent.com/dspaceproject/dspacedirect-pilot/master/cloud-init.yaml?token=AerL0k7p2zFgbAtvjQswL6wKWJ7BvXxUks5annshwA%3D%3D\n",
+                                "\n",
+                                "\n",
+                                "--==BOUNDARY==\n",
+                                "MIME-Version: 1.0\n",
+                                "Content-Type: text/x-include-url; charset=\"us-ascii\"\n",
+                                "#include https://raw.githubusercontent.com/dspaceproject/NetdataRepo/datadog/datadog.sh\n",
+                                "\n"
+                            ]
+                        ]
+                    }
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "c99596dd-1ef7-4192-a2b6-9928ca536010"
+                }
+            }
+        },
+        "LaunchConfig4": {
+            "Type": "AWS::AutoScaling::LaunchConfiguration",
+            "Condition": "Set_d",
+            "Properties": {
+                "ImageId": {
+                    "Fn::FindInMap": [
+                        "AWSRegionArch2AMI",
+                        {
+                            "Ref": "AWS::Region"
+                        },
+                        {
+                            "Fn::FindInMap": [
+                                "AWSInstanceType2Arch",
+                                {
+                                    "Ref": "InstanceType"
+                                },
+                                "Arch"
+                            ]
+                        }
+                    ]
+                },
+                "InstanceType": {
+                    "Ref": "InstanceType"
+                },
+                "InstanceMonitoring": "false",
+                "AssociatePublicIpAddress": "true",
+                "BlockDeviceMappings": [
+                    {
+                        "DeviceName": "/dev/sda1",
+                        "Ebs": {
+                            "VolumeSize": "70",
+                            "VolumeType": "gp2",
+                            "Iops": "100"
+                        }
+                    }
+                ],
+                "KeyName": {
+                    "Ref": "KeyName"
+                },
+                "IamInstanceProfile": {
+                    "Ref": "InstanceProfile"
+                },
+                "SecurityGroups": [
+                    {
+                        "Ref": "InstanceSG"
+                    }
+                ],
+                "UserData": {
+                    "Fn::Base64": {
+                        "Fn::Join": [
+                            "",
+                            [
+                                "From Mukumbu Mon Feb  5 11:00 2018\n",
+                                "Content-Type: multipart/mixed; boundary=\"==BOUNDARY==\"\n",
+                                "MIME-Version: 1.0\n",
+                                "--==BOUNDARY==\n",
+                                "MIME-Version: 1.0\n",
+                                "Content-Type: text/x-shellscript; charset=\"us-ascii\"\n",
+                                "#!/bin/bash\n",
+                                "echo \"`curl http://169.254.169.254/latest/meta-data/public-ipv4`  dspaceserver4.dddke.net dspaceserver4\" >> /etc/hosts\n",
+                                "echo \"dspaceserver4\" >> /etc/hostname\n",
+                                "sysctl kernel.hostname=dspaceserver4\n",
+                                "echo DBENDPOINT=",
+                                {
+                                    "Fn::GetAtt": [
+                                        "DspaceDb",
+                                        "Endpoint.Address"
+                                    ]
+                                },
+                                " >> /etc/environment\n",
+                                "source /etc/environment\n",
+                                "echo \"export facter_db_endpoint=$DBENDPOINT\" >> ~/.bashrc\n",
+                                "source ~/.bashrc\n",
+                                "\n",
+                                "--==BOUNDARY==\n",
+                                "MIME-Version: 1.0\n",
+                                "Content-Type: text/x-include-url; charset=\"us-ascii\"\n",
+                                "#include https://raw.githubusercontent.com/dspaceproject/dspacedirect-pilot/master/cloud-init.yaml?token=AerL0k7p2zFgbAtvjQswL6wKWJ7BvXxUks5annshwA%3D%3D\n",
+                                "\n",
+                                "\n",
+                                "--==BOUNDARY==\n",
+                                "MIME-Version: 1.0\n",
+                                "Content-Type: text/x-include-url; charset=\"us-ascii\"\n",
+                                "#include https://raw.githubusercontent.com/dspaceproject/NetdataRepo/datadog/datadog.sh\n",
+                                "\n"
+                            ]
+                        ]
+                    }
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "d3dc4136-10a7-46b1-a693-b6c49e28768d"
+                }
+            }
+        },
+        "LaunchConfig5": {
+            "Type": "AWS::AutoScaling::LaunchConfiguration",
+            "Condition": "Set_e",
+            "Properties": {
+                "ImageId": {
+                    "Fn::FindInMap": [
+                        "AWSRegionArch2AMI",
+                        {
+                            "Ref": "AWS::Region"
+                        },
+                        {
+                            "Fn::FindInMap": [
+                                "AWSInstanceType2Arch",
+                                {
+                                    "Ref": "InstanceType"
+                                },
+                                "Arch"
+                            ]
+                        }
+                    ]
+                },
+                "InstanceType": {
+                    "Ref": "InstanceType"
+                },
+                "InstanceMonitoring": "false",
+                "AssociatePublicIpAddress": "true",
+                "BlockDeviceMappings": [
+                    {
+                        "DeviceName": "/dev/sda1",
+                        "Ebs": {
+                            "VolumeSize": "70",
+                            "VolumeType": "gp2",
+                            "Iops": "100"
+                        }
+                    }
+                ],
+                "KeyName": {
+                    "Ref": "KeyName"
+                },
+                "IamInstanceProfile": {
+                    "Ref": "InstanceProfile"
+                },
+                "SecurityGroups": [
+                    {
+                        "Ref": "InstanceSG"
+                    }
+                ],
+                "UserData": {
+                    "Fn::Base64": {
+                        "Fn::Join": [
+                            "",
+                            [
+                                "From Mukumbu Mon Feb  5 11:00 2018\n",
+                                "Content-Type: multipart/mixed; boundary=\"==BOUNDARY==\"\n",
+                                "MIME-Version: 1.0\n",
+                                "--==BOUNDARY==\n",
+                                "MIME-Version: 1.0\n",
+                                "Content-Type: text/x-shellscript; charset=\"us-ascii\"\n",
+                                "#!/bin/bash\n",
+                                "echo \"`curl http://169.254.169.254/latest/meta-data/public-ipv4`  dspaceserver5.dddke.net dspaceserver5\" >> /etc/hosts\n",
+                                "echo \"dspaceserver5\" >> /etc/hostname\n",
+                                "sysctl kernel.hostname=dspaceserver5\n",
+                                "echo DBENDPOINT=",
+                                {
+                                    "Fn::GetAtt": [
+                                        "DspaceDb",
+                                        "Endpoint.Address"
+                                    ]
+                                },
+                                " >> /etc/environment\n",
+                                "source /etc/environment\n",
+                                "echo \"export facter_db_endpoint=$DBENDPOINT\" >> ~/.bashrc\n",
+                                "source ~/.bashrc\n",
+                                "\n",
+                                "--==BOUNDARY==\n",
+                                "MIME-Version: 1.0\n",
+                                "Content-Type: text/x-include-url; charset=\"us-ascii\"\n",
+                                "#include https://raw.githubusercontent.com/dspaceproject/dspacedirect-pilot/master/cloud-init.yaml?token=AerL0k7p2zFgbAtvjQswL6wKWJ7BvXxUks5annshwA%3D%3D\n",
+                                "\n",
+                                "\n",
+                                "--==BOUNDARY==\n",
+                                "MIME-Version: 1.0\n",
+                                "Content-Type: text/x-include-url; charset=\"us-ascii\"\n",
+                                "#include https://raw.githubusercontent.com/dspaceproject/NetdataRepo/datadog/datadog.sh\n",
+                                "\n"
+                            ]
+                        ]
+                    }
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "a7df699e-07f0-4cc3-b491-26893b09748e"
+                }
+            }
+        },
+        "LaunchConfig6": {
+            "Type": "AWS::AutoScaling::LaunchConfiguration",
+            "Condition": "Set_f",
+            "Properties": {
+                "ImageId": {
+                    "Fn::FindInMap": [
+                        "AWSRegionArch2AMI",
+                        {
+                            "Ref": "AWS::Region"
+                        },
+                        {
+                            "Fn::FindInMap": [
+                                "AWSInstanceType2Arch",
+                                {
+                                    "Ref": "InstanceType"
+                                },
+                                "Arch"
+                            ]
+                        }
+                    ]
+                },
+                "InstanceType": {
+                    "Ref": "InstanceType"
+                },
+                "InstanceMonitoring": "false",
+                "AssociatePublicIpAddress": "true",
+                "BlockDeviceMappings": [
+                    {
+                        "DeviceName": "/dev/sda1",
+                        "Ebs": {
+                            "VolumeSize": "70",
+                            "VolumeType": "gp2",
+                            "Iops": "100"
+                        }
+                    }
+                ],
+                "KeyName": {
+                    "Ref": "KeyName"
+                },
+                "IamInstanceProfile": {
+                    "Ref": "InstanceProfile"
+                },
+                "SecurityGroups": [
+                    {
+                        "Ref": "InstanceSG"
+                    }
+                ],
+                "UserData": {
+                    "Fn::Base64": {
+                        "Fn::Join": [
+                            "",
+                            [
+                                "From Mukumbu Mon Feb  5 11:00 2018\n",
+                                "Content-Type: multipart/mixed; boundary=\"==BOUNDARY==\"\n",
+                                "MIME-Version: 1.0\n",
+                                "--==BOUNDARY==\n",
+                                "MIME-Version: 1.0\n",
+                                "Content-Type: text/x-shellscript; charset=\"us-ascii\"\n",
+                                "#!/bin/bash\n",
+                                "echo \"`curl http://169.254.169.254/latest/meta-data/public-ipv4`  dspaceserver6.dddke.net dspaceserver6\" >> /etc/hosts\n",
+                                "echo \"dspaceserver6\" >> /etc/hostname\n",
+                                "sysctl kernel.hostname=dspaceserver6\n",
+                                "echo DBENDPOINT=",
+                                {
+                                    "Fn::GetAtt": [
+                                        "DspaceDb",
+                                        "Endpoint.Address"
+                                    ]
+                                },
+                                " >> /etc/environment\n",
+                                "source /etc/environment\n",
+                                "echo \"export facter_db_endpoint=$DBENDPOINT\" >> ~/.bashrc\n",
+                                "source ~/.bashrc\n",
+                                "\n",
+                                "--==BOUNDARY==\n",
+                                "MIME-Version: 1.0\n",
+                                "Content-Type: text/x-include-url; charset=\"us-ascii\"\n",
+                                "#include https://raw.githubusercontent.com/dspaceproject/dspacedirect-pilot/master/cloud-init.yaml?token=AerL0k7p2zFgbAtvjQswL6wKWJ7BvXxUks5annshwA%3D%3D\n",
+                                "\n",
+                                "--==BOUNDARY==\n",
+                                "MIME-Version: 1.0\n",
+                                "Content-Type: text/x-include-url; charset=\"us-ascii\"\n",
+                                "#include https://raw.githubusercontent.com/dspaceproject/NetdataRepo/datadog/datadog.sh\n"
+                            ]
+                        ]
+                    }
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "97086e35-3dce-4b76-9078-587a0a250438"
+                }
+            }
+        },
+        "LaunchConfig7": {
+            "Type": "AWS::AutoScaling::LaunchConfiguration",
+            "Condition": "Set_g",
+            "Properties": {
+                "ImageId": {
+                    "Fn::FindInMap": [
+                        "AWSRegionArch2AMI",
+                        {
+                            "Ref": "AWS::Region"
+                        },
+                        {
+                            "Fn::FindInMap": [
+                                "AWSInstanceType2Arch",
+                                {
+                                    "Ref": "InstanceType"
+                                },
+                                "Arch"
+                            ]
+                        }
+                    ]
+                },
+                "InstanceType": {
+                    "Ref": "InstanceType"
+                },
+                "InstanceMonitoring": "false",
+                "AssociatePublicIpAddress": "true",
+                "BlockDeviceMappings": [
+                    {
+                        "DeviceName": "/dev/sda1",
+                        "Ebs": {
+                            "VolumeSize": "70",
+                            "VolumeType": "gp2",
+                            "Iops": "100"
+                        }
+                    }
+                ],
+                "KeyName": {
+                    "Ref": "KeyName"
+                },
+                "IamInstanceProfile": {
+                    "Ref": "InstanceProfile"
+                },
+                "SecurityGroups": [
+                    {
+                        "Ref": "InstanceSG"
+                    }
+                ],
+                "UserData": {
+                    "Fn::Base64": {
+                        "Fn::Join": [
+                            "",
+                            [
+                                "From Mukumbu Mon Feb  5 11:00 2018\n",
+                                "Content-Type: multipart/mixed; boundary=\"==BOUNDARY==\"\n",
+                                "MIME-Version: 1.0\n",
+                                "--==BOUNDARY==\n",
+                                "MIME-Version: 1.0\n",
+                                "Content-Type: text/x-shellscript; charset=\"us-ascii\"\n",
+                                "#!/bin/bash\n",
+                                "echo \"`curl http://169.254.169.254/latest/meta-data/public-ipv4`  dspaceserver7.dddke.net dspaceserver7\" >> /etc/hosts\n",
+                                "echo \"dspaceserver7\" >> /etc/hostname\n",
+                                "sysctl kernel.hostname=dspaceserver7\n",
+                                "echo DBENDPOINT=",
+                                {
+                                    "Fn::GetAtt": [
+                                        "DspaceDb",
+                                        "Endpoint.Address"
+                                    ]
+                                },
+                                " >> /etc/environment\n",
+                                "source /etc/environment\n",
+                                "echo \"export facter_db_endpoint=$DBENDPOINT\" >> ~/.bashrc\n",
+                                "source ~/.bashrc\n",
+                                "\n",
+                                "--==BOUNDARY==\n",
+                                "MIME-Version: 1.0\n",
+                                "Content-Type: text/x-include-url; charset=\"us-ascii\"\n",
+                                "#include https://raw.githubusercontent.com/dspaceproject/dspacedirect-pilot/master/cloud-init.yaml?token=AerL0k7p2zFgbAtvjQswL6wKWJ7BvXxUks5annshwA%3D%3D\n",
+                                "\n",
+                                "--==BOUNDARY==\n",
+                                "MIME-Version: 1.0\n",
+                                "Content-Type: text/x-include-url; charset=\"us-ascii\"\n",
+                                "#include https://raw.githubusercontent.com/dspaceproject/NetdataRepo/datadog/datadog.sh\n"
+                            ]
+                        ]
+                    }
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "49a427b1-9fa7-4da2-8cc6-52e47f4da7fc"
+                }
+            }
+        },
+        "LaunchConfig8": {
+            "Type": "AWS::AutoScaling::LaunchConfiguration",
+            "Condition": "Set_h",
+            "Properties": {
+                "ImageId": {
+                    "Fn::FindInMap": [
+                        "AWSRegionArch2AMI",
+                        {
+                            "Ref": "AWS::Region"
+                        },
+                        {
+                            "Fn::FindInMap": [
+                                "AWSInstanceType2Arch",
+                                {
+                                    "Ref": "InstanceType"
+                                },
+                                "Arch"
+                            ]
+                        }
+                    ]
+                },
+                "InstanceType": {
+                    "Ref": "InstanceType"
+                },
+                "InstanceMonitoring": "false",
+                "AssociatePublicIpAddress": "true",
+                "BlockDeviceMappings": [
+                    {
+                        "DeviceName": "/dev/sda1",
+                        "Ebs": {
+                            "VolumeSize": "70",
+                            "VolumeType": "gp2",
+                            "Iops": "100"
+                        }
+                    }
+                ],
+                "KeyName": {
+                    "Ref": "KeyName"
+                },
+                "IamInstanceProfile": {
+                    "Ref": "InstanceProfile"
+                },
+                "SecurityGroups": [
+                    {
+                        "Ref": "InstanceSG"
+                    }
+                ],
+                "UserData": {
+                    "Fn::Base64": {
+                        "Fn::Join": [
+                            "",
+                            [
+                                "From Mukumbu Mon Feb  5 11:00 2018\n",
+                                "Content-Type: multipart/mixed; boundary=\"==BOUNDARY==\"\n",
+                                "MIME-Version: 1.0\n",
+                                "--==BOUNDARY==\n",
+                                "MIME-Version: 1.0\n",
+                                "Content-Type: text/x-shellscript; charset=\"us-ascii\"\n",
+                                "#!/bin/bash\n",
+                                "echo \"`curl http://169.254.169.254/latest/meta-data/public-ipv4`  dspaceserver8.dddke.net dspaceserver8\" >> /etc/hosts\n",
+                                "echo \"dspaceserver8\" >> /etc/hostname\n",
+                                "sysctl kernel.hostname=dspaceserver8\n",
+                                "echo DBENDPOINT=",
+                                {
+                                    "Fn::GetAtt": [
+                                        "DspaceDb",
+                                        "Endpoint.Address"
+                                    ]
+                                },
+                                " >> /etc/environment\n",
+                                "source /etc/environment\n",
+                                "echo \"export facter_db_endpoint=$DBENDPOINT\" >> ~/.bashrc\n",
+                                "source ~/.bashrc\n",
+                                "\n",
+                                "--==BOUNDARY==\n",
+                                "MIME-Version: 1.0\n",
+                                "Content-Type: text/x-include-url; charset=\"us-ascii\"\n",
+                                "#include https://raw.githubusercontent.com/dspaceproject/dspacedirect-pilot/master/cloud-init.yaml?token=AerL0k7p2zFgbAtvjQswL6wKWJ7BvXxUks5annshwA%3D%3D\n",
+                                "\n",
+                                "--==BOUNDARY==\n",
+                                "MIME-Version: 1.0\n",
+                                "Content-Type: text/x-include-url; charset=\"us-ascii\"\n",
+                                "#include https://raw.githubusercontent.com/dspaceproject/NetdataRepo/datadog/datadog.sh\n"
+                            ]
+                        ]
+                    }
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "90b70c62-ac94-467f-969a-1778433e1cf8"
+                }
+            }
+        },
+        "LaunchConfig9": {
+            "Type": "AWS::AutoScaling::LaunchConfiguration",
+            "Condition": "Set_i",
+            "Properties": {
+                "ImageId": {
+                    "Fn::FindInMap": [
+                        "AWSRegionArch2AMI",
+                        {
+                            "Ref": "AWS::Region"
+                        },
+                        {
+                            "Fn::FindInMap": [
+                                "AWSInstanceType2Arch",
+                                {
+                                    "Ref": "InstanceType"
+                                },
+                                "Arch"
+                            ]
+                        }
+                    ]
+                },
+                "InstanceType": {
+                    "Ref": "InstanceType"
+                },
+                "InstanceMonitoring": "false",
+                "AssociatePublicIpAddress": "true",
+                "BlockDeviceMappings": [
+                    {
+                        "DeviceName": "/dev/sda1",
+                        "Ebs": {
+                            "VolumeSize": "70",
+                            "VolumeType": "gp2",
+                            "Iops": "100"
+                        }
+                    }
+                ],
+                "KeyName": {
+                    "Ref": "KeyName"
+                },
+                "IamInstanceProfile": {
+                    "Ref": "InstanceProfile"
+                },
+                "SecurityGroups": [
+                    {
+                        "Ref": "InstanceSG"
+                    }
+                ],
+                "UserData": {
+                    "Fn::Base64": {
+                        "Fn::Join": [
+                            "",
+                            [
+                                "From Mukumbu Mon Feb  5 11:00 2018\n",
+                                "Content-Type: multipart/mixed; boundary=\"==BOUNDARY==\"\n",
+                                "MIME-Version: 1.0\n",
+                                "--==BOUNDARY==\n",
+                                "MIME-Version: 1.0\n",
+                                "Content-Type: text/x-shellscript; charset=\"us-ascii\"\n",
+                                "#!/bin/bash\n",
+                                "echo \"`curl http://169.254.169.254/latest/meta-data/public-ipv4`  dspaceserver9.dddke.net dspaceserver9\" >> /etc/hosts\n",
+                                "echo \"dspaceserver9\" >> /etc/hostname\n",
+                                "sysctl kernel.hostname=dspaceserver9\n",
+                                "echo DBENDPOINT=",
+                                {
+                                    "Fn::GetAtt": [
+                                        "DspaceDb",
+                                        "Endpoint.Address"
+                                    ]
+                                },
+                                " >> /etc/environment\n",
+                                "source /etc/environment\n",
+                                "echo \"export facter_db_endpoint=$DBENDPOINT\" >> ~/.bashrc\n",
+                                "source ~/.bashrc\n",
+                                "\n",
+                                "--==BOUNDARY==\n",
+                                "MIME-Version: 1.0\n",
+                                "Content-Type: text/x-include-url; charset=\"us-ascii\"\n",
+                                "#include https://raw.githubusercontent.com/dspaceproject/dspacedirect-pilot/master/cloud-init.yaml?token=AerL0k7p2zFgbAtvjQswL6wKWJ7BvXxUks5annshwA%3D%3D\n",
+                                "\n",
+                                "--==BOUNDARY==\n",
+                                "MIME-Version: 1.0\n",
+                                "Content-Type: text/x-include-url; charset=\"us-ascii\"\n",
+                                "#include https://raw.githubusercontent.com/dspaceproject/NetdataRepo/datadog/datadog.sh\n"
+                            ]
+                        ]
+                    }
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "6bc0b06b-6621-48b1-975e-d507456284f7"
+                }
+            }
+        },
+        "LaunchConfig10": {
+            "Type": "AWS::AutoScaling::LaunchConfiguration",
+            "Condition": "Set_j",
+            "Properties": {
+                "ImageId": {
+                    "Fn::FindInMap": [
+                        "AWSRegionArch2AMI",
+                        {
+                            "Ref": "AWS::Region"
+                        },
+                        {
+                            "Fn::FindInMap": [
+                                "AWSInstanceType2Arch",
+                                {
+                                    "Ref": "InstanceType"
+                                },
+                                "Arch"
+                            ]
+                        }
+                    ]
+                },
+                "InstanceType": {
+                    "Ref": "InstanceType"
+                },
+                "InstanceMonitoring": "false",
+                "AssociatePublicIpAddress": "true",
+                "BlockDeviceMappings": [
+                    {
+                        "DeviceName": "/dev/sda1",
+                        "Ebs": {
+                            "VolumeSize": "70",
+                            "VolumeType": "gp2",
+                            "Iops": "100"
+                        }
+                    }
+                ],
+                "KeyName": {
+                    "Ref": "KeyName"
+                },
+                "IamInstanceProfile": {
+                    "Ref": "InstanceProfile"
+                },
+                "SecurityGroups": [
+                    {
+                        "Ref": "InstanceSG"
+                    }
+                ],
+                "UserData": {
+                    "Fn::Base64": {
+                        "Fn::Join": [
+                            "",
+                            [
+                                "From Mukumbu Mon Feb  5 11:00 2018\n",
+                                "Content-Type: multipart/mixed; boundary=\"==BOUNDARY==\"\n",
+                                "MIME-Version: 1.0\n",
+                                "--==BOUNDARY==\n",
+                                "MIME-Version: 1.0\n",
+                                "Content-Type: text/x-shellscript; charset=\"us-ascii\"\n",
+                                "#!/bin/bash\n",
+                                "echo \"`curl http://169.254.169.254/latest/meta-data/public-ipv4`  dspaceserver10.dddke.net dspaceserver10\" >> /etc/hosts\n",
+                                "echo \"dspaceserver10\" >> /etc/hostname\n",
+                                "sysctl kernel.hostname=dspaceserver10\n",
+                                "echo DBENDPOINT=",
+                                {
+                                    "Fn::GetAtt": [
+                                        "DspaceDb",
+                                        "Endpoint.Address"
+                                    ]
+                                },
+                                " >> /etc/environment\n",
+                                "source /etc/environment\n",
+                                "echo \"export facter_db_endpoint=$DBENDPOINT\" >> ~/.bashrc\n",
+                                "source ~/.bashrc\n",
+                                "\n",
+                                "--==BOUNDARY==\n",
+                                "MIME-Version: 1.0\n",
+                                "Content-Type: text/x-include-url; charset=\"us-ascii\"\n",
+                                "#include https://raw.githubusercontent.com/dspaceproject/dspacedirect-pilot/master/cloud-init.yaml?token=AerL0k7p2zFgbAtvjQswL6wKWJ7BvXxUks5annshwA%3D%3D\n",
+                                "\n",
+                                "--==BOUNDARY==\n",
+                                "MIME-Version: 1.0\n",
+                                "Content-Type: text/x-include-url; charset=\"us-ascii\"\n",
+                                "#include https://raw.githubusercontent.com/dspaceproject/NetdataRepo/datadog/datadog.sh\n"
+                            ]
+                        ]
+                    }
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "266adf31-7209-4a79-bd11-8ff5a21f04b7"
+                }
+            }
+        },
+        "DspaceSubnetGroup": {
+            "Type": "AWS::RDS::DBSubnetGroup",
+            "Properties": {
+                "DBSubnetGroupDescription": {
+                    "Fn::Join": [
+                        "",
+                        [
+                            "RDS Subnet Group for ",
+                            {
+                                "Ref": "AWS::StackName"
+                            }
+                        ]
+                    ]
+                },
+                "SubnetIds": [
+                    {
+                        "Ref": "DBSubnet1"
+                    },
+                    {
+                        "Ref": "DBSubnet2"
+                    }
+                ],
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "dspace_project_staging_RDSSubnetGroups"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "13a4c9a5-73fe-4a78-b1b4-8b3314c5b6d3"
+                }
+            }
+        },
+        "DspaceDb": {
+            "Type": "AWS::RDS::DBInstance",
+            "Properties": {
+                "Engine": "aurora-postgresql",
+                "DBClusterIdentifier": {
+                    "Ref": "DatabaseCluster"
+                },
+                "DBInstanceClass": {
+                    "Ref": "DatabaseClass"
+                },
+                "DBSubnetGroupName": {
+                    "Ref": "DspaceSubnetGroup"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "3bec37e4-ab52-40e0-b8b1-95ccccad5133"
+                }
+            },
+            "DependsOn": [
+                "DspaceSubnetGroup"
+            ]
+        },
+        "DatabaseCluster": {
+            "Type": "AWS::RDS::DBCluster",
+            "Properties": {
+                "Engine": "aurora-postgresql",
+                "DBClusterParameterGroupName": "default.aurora-postgresql9.6",
+                "DatabaseName": "DspaceDb",
+                "MasterUsername": {
+                    "Ref": "MasterUsername"
+                },
+                "MasterUserPassword": {
+                    "Ref": "MasterUserPassword"
+                },
+                "Port": {
+                    "Ref": "TcpPort"
+                },
+                "PreferredBackupWindow": {
+                    "Ref": "PreferredBackupWindow"
+                },
+                "PreferredMaintenanceWindow": {
+                    "Ref": "PreferredMaintenanceWindow"
+                },
+                "DBSubnetGroupName": {
+                    "Ref": "DspaceSubnetGroup"
+                },
+                "VpcSecurityGroupIds": [
+                    {
+                        "Ref": "RDSSG"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "6e707597-1511-4573-9870-1e7388caa078"
+                }
+            }
+        },
+        "RDSSG": {
+            "Type": "AWS::EC2::SecurityGroup",
+            "Properties": {
+                "GroupDescription": "Security group for the database",
+                "VpcId": {
+                    "Ref": "VPC"
+                },
+                "SecurityGroupIngress": [
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "5432",
+                        "ToPort": "5432",
+                        "SourceSecurityGroupId": {
+                            "Ref": "InstanceSG"
+                        }
+                    }
+                ],
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "Dspace_project_staging_RDSSG"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "80432a4f-0057-4a83-a9a6-d5c0ddcd1169"
+                }
+            }
+        },
+        "ASG1ScaleUpPolicy": {
+            "Type": "AWS::AutoScaling::ScalingPolicy",
+            "Condition": "Set_a",
+            "Properties": {
+                "AutoScalingGroupName": {
+                    "Ref": "ASG1"
+                },
+                "AdjustmentType": "ChangeInCapacity",
+                "PolicyType": "SimpleScaling",
+                "Cooldown": "60",
+                "ScalingAdjustment": 1
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "9f18995b-3aca-40eb-b2f3-0cfd454dd3f6"
+                }
+            }
+        },
+        "ASG1ScaleDownPolicy": {
+            "Type": "AWS::AutoScaling::ScalingPolicy",
+            "Condition": "Set_a",
+            "Properties": {
+                "AutoScalingGroupName": {
+                    "Ref": "ASG1"
+                },
+                "AdjustmentType": "ChangeInCapacity",
+                "PolicyType": "SimpleScaling",
+                "Cooldown": "60",
+                "ScalingAdjustment": -1
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "3cea7321-d1e4-4479-ad54-1698acb0baae"
+                }
+            }
+        },
+        "ASG2ScaleUpPolicy": {
+            "Type": "AWS::AutoScaling::ScalingPolicy",
+            "Condition": "Set_b",
+            "Properties": {
+                "AutoScalingGroupName": {
+                    "Ref": "ASG2"
+                },
+                "AdjustmentType": "ChangeInCapacity",
+                "PolicyType": "SimpleScaling",
+                "Cooldown": "60",
+                "ScalingAdjustment": 1
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "6cf126d5-4a00-4df4-8ad1-8ef08721e699"
+                }
+            }
+        },
+        "ASG2ScaleDownPolicy": {
+            "Type": "AWS::AutoScaling::ScalingPolicy",
+            "Condition": "Set_b",
+            "Properties": {
+                "AutoScalingGroupName": {
+                    "Ref": "ASG2"
+                },
+                "AdjustmentType": "ChangeInCapacity",
+                "PolicyType": "SimpleScaling",
+                "Cooldown": "60",
+                "ScalingAdjustment": -1
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "4738b13f-277e-49f8-a65f-6f2d5bbb0ac1"
+                }
+            }
+        },
+        "ASG3ScaleUpPolicy": {
+            "Type": "AWS::AutoScaling::ScalingPolicy",
+            "Condition": "Set_c",
+            "Properties": {
+                "AutoScalingGroupName": {
+                    "Ref": "ASG3"
+                },
+                "AdjustmentType": "ChangeInCapacity",
+                "PolicyType": "SimpleScaling",
+                "Cooldown": "60",
+                "ScalingAdjustment": 1
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "fce4e3d3-9254-417e-8030-092d9481690d"
+                }
+            }
+        },
+        "ASG3ScaleDownPolicy": {
+            "Type": "AWS::AutoScaling::ScalingPolicy",
+            "Condition": "Set_c",
+            "Properties": {
+                "AutoScalingGroupName": {
+                    "Ref": "ASG3"
+                },
+                "AdjustmentType": "ChangeInCapacity",
+                "PolicyType": "SimpleScaling",
+                "Cooldown": "60",
+                "ScalingAdjustment": -1
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "74aa18db-127d-485f-a9af-0eab0cb112a2"
+                }
+            }
+        },
+        "ASG4ScaleUpPolicy": {
+            "Type": "AWS::AutoScaling::ScalingPolicy",
+            "Condition": "Set_d",
+            "Properties": {
+                "AutoScalingGroupName": {
+                    "Ref": "ASG4"
+                },
+                "AdjustmentType": "ChangeInCapacity",
+                "PolicyType": "SimpleScaling",
+                "Cooldown": "60",
+                "ScalingAdjustment": 1
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "9080075f-e8bc-42ae-b4fd-6a2e27862e09"
+                }
+            }
+        },
+        "ASG4ScaleDownPolicy": {
+            "Type": "AWS::AutoScaling::ScalingPolicy",
+            "Condition": "Set_d",
+            "Properties": {
+                "AutoScalingGroupName": {
+                    "Ref": "ASG4"
+                },
+                "AdjustmentType": "ChangeInCapacity",
+                "PolicyType": "SimpleScaling",
+                "Cooldown": "60",
+                "ScalingAdjustment": -1
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "ea931e40-e99c-49c6-9b4c-fdecdb725015"
+                }
+            }
+        },
+        "ASG5ScaleUpPolicy": {
+            "Type": "AWS::AutoScaling::ScalingPolicy",
+            "Condition": "Set_e",
+            "Properties": {
+                "AutoScalingGroupName": {
+                    "Ref": "ASG5"
+                },
+                "AdjustmentType": "ChangeInCapacity",
+                "PolicyType": "SimpleScaling",
+                "Cooldown": "60",
+                "ScalingAdjustment": 1
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "91f383dc-cc3a-4c6a-8630-d375b494c141"
+                }
+            }
+        },
+        "ASG5ScaleDownPolicy": {
+            "Type": "AWS::AutoScaling::ScalingPolicy",
+            "Condition": "Set_e",
+            "Properties": {
+                "AutoScalingGroupName": {
+                    "Ref": "ASG5"
+                },
+                "AdjustmentType": "ChangeInCapacity",
+                "PolicyType": "SimpleScaling",
+                "Cooldown": "60",
+                "ScalingAdjustment": -1
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "91c1ae84-964b-4048-a888-04bd4b230ab8"
+                }
+            }
+        },
+        "ASG6ScaleUpPolicy": {
+            "Type": "AWS::AutoScaling::ScalingPolicy",
+            "Condition": "Set_f",
+            "Properties": {
+                "AutoScalingGroupName": {
+                    "Ref": "ASG6"
+                },
+                "AdjustmentType": "ChangeInCapacity",
+                "PolicyType": "SimpleScaling",
+                "Cooldown": "60",
+                "ScalingAdjustment": 1
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "476f9438-578a-4577-9bd7-bc600a16dad6"
+                }
+            }
+        },
+        "ASG6ScaleDownPolicy": {
+            "Type": "AWS::AutoScaling::ScalingPolicy",
+            "Condition": "Set_f",
+            "Properties": {
+                "AutoScalingGroupName": {
+                    "Ref": "ASG6"
+                },
+                "AdjustmentType": "ChangeInCapacity",
+                "PolicyType": "SimpleScaling",
+                "Cooldown": "60",
+                "ScalingAdjustment": -1
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "675a7b54-0c3a-43fe-9807-b4c86004c819"
+                }
+            }
+        },
+        "ASG7ScaleUpPolicy": {
+            "Type": "AWS::AutoScaling::ScalingPolicy",
+            "Condition": "Set_g",
+            "Properties": {
+                "AutoScalingGroupName": {
+                    "Ref": "ASG7"
+                },
+                "AdjustmentType": "ChangeInCapacity",
+                "PolicyType": "SimpleScaling",
+                "Cooldown": "60",
+                "ScalingAdjustment": 1
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "e589fea8-b82b-413e-a7fd-f886245b2792"
+                }
+            }
+        },
+        "ASG7ScaleDownPolicy": {
+            "Type": "AWS::AutoScaling::ScalingPolicy",
+            "Condition": "Set_g",
+            "Properties": {
+                "AutoScalingGroupName": {
+                    "Ref": "ASG7"
+                },
+                "AdjustmentType": "ChangeInCapacity",
+                "PolicyType": "SimpleScaling",
+                "Cooldown": "60",
+                "ScalingAdjustment": -1
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "3650d4d2-b5dc-4962-84c0-0b08004d5d4f"
+                }
+            }
+        },
+        "ASG8ScaleUpPolicy": {
+            "Type": "AWS::AutoScaling::ScalingPolicy",
+            "Condition": "Set_h",
+            "Properties": {
+                "AutoScalingGroupName": {
+                    "Ref": "ASG8"
+                },
+                "AdjustmentType": "ChangeInCapacity",
+                "PolicyType": "SimpleScaling",
+                "Cooldown": "60",
+                "ScalingAdjustment": 1
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "3b2f2016-08e0-4bb1-83d9-ea0f8d006646"
+                }
+            }
+        },
+        "ASG8ScaleDownPolicy": {
+            "Type": "AWS::AutoScaling::ScalingPolicy",
+            "Condition": "Set_h",
+            "Properties": {
+                "AutoScalingGroupName": {
+                    "Ref": "ASG8"
+                },
+                "AdjustmentType": "ChangeInCapacity",
+                "PolicyType": "SimpleScaling",
+                "Cooldown": "60",
+                "ScalingAdjustment": -1
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "6767f15d-a495-4114-8b15-8f5a17824e95"
+                }
+            }
+        },
+        "ASG9ScaleUpPolicy": {
+            "Type": "AWS::AutoScaling::ScalingPolicy",
+            "Condition": "Set_i",
+            "Properties": {
+                "AutoScalingGroupName": {
+                    "Ref": "ASG9"
+                },
+                "AdjustmentType": "ChangeInCapacity",
+                "PolicyType": "SimpleScaling",
+                "Cooldown": "60",
+                "ScalingAdjustment": 1
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "a46345ff-b697-4406-9c23-6ce0bec47df8"
+                }
+            }
+        },
+        "ASG9ScaleDownPolicy": {
+            "Type": "AWS::AutoScaling::ScalingPolicy",
+            "Condition": "Set_i",
+            "Properties": {
+                "AutoScalingGroupName": {
+                    "Ref": "ASG9"
+                },
+                "AdjustmentType": "ChangeInCapacity",
+                "PolicyType": "SimpleScaling",
+                "Cooldown": "60",
+                "ScalingAdjustment": -1
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "48483030-7ca6-43ae-986e-32dc5b65ed97"
+                }
+            }
+        },
+        "ASG10ScaleUpPolicy": {
+            "Type": "AWS::AutoScaling::ScalingPolicy",
+            "Condition": "Set_j",
+            "Properties": {
+                "AutoScalingGroupName": {
+                    "Ref": "ASG10"
+                },
+                "AdjustmentType": "ChangeInCapacity",
+                "PolicyType": "SimpleScaling",
+                "Cooldown": "60",
+                "ScalingAdjustment": 1
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "a0d6d854-6f8a-4471-9373-cb736ff4c963"
+                }
+            }
+        },
+        "ASG10ScaleDownPolicy": {
+            "Type": "AWS::AutoScaling::ScalingPolicy",
+            "Condition": "Set_j",
+            "Properties": {
+                "AutoScalingGroupName": {
+                    "Ref": "ASG10"
+                },
+                "AdjustmentType": "ChangeInCapacity",
+                "PolicyType": "SimpleScaling",
+                "Cooldown": "60",
+                "ScalingAdjustment": -1
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "59630f35-dafa-4bd3-8258-b75610f96f1c"
+                }
+            }
+        },
+        "NotificationTopic": {
+            "Type": "AWS::SNS::Topic",
+            "Properties": {
+                "Subscription": [
+                    {
+                        "Endpoint": {
+                            "Ref": "OperatorEMail"
+                        },
+                        "Protocol": "email"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "f7defb55-217a-4842-83fe-520231e06905"
+                }
+            }
+        },
+        "CPU6AlarmHigh": {
+            "Type": "AWS::CloudWatch::Alarm",
+            "Condition": "Set_f",
+            "Properties": {
+                "AlarmDescription": "Scale-up if CPU > 90% for 10 minutes",
+                "MetricName": "CPUUtilization",
+                "Namespace": "AWS/EC2",
+                "Statistic": "Average",
+                "Period": "300",
+                "EvaluationPeriods": "2",
+                "Threshold": "90",
+                "AlarmActions": [
+                    {
+                        "Ref": "ASG6ScaleUpPolicy"
+                    }
+                ],
+                "Dimensions": [
+                    {
+                        "Name": "AutoScalingGroupName",
+                        "Value": {
+                            "Ref": "ASG6"
+                        }
+                    }
+                ],
+                "ComparisonOperator": "GreaterThanThreshold"
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "b1676110-7611-4950-b059-96fe1774ad45"
+                }
+            }
+        },
+        "CPU6AlarmLow": {
+            "Type": "AWS::CloudWatch::Alarm",
+            "Condition": "Set_f",
+            "Properties": {
+                "AlarmDescription": "Scale-down if CPU < 70% for 10 minutes",
+                "MetricName": "CPUUtilization",
+                "Namespace": "AWS/EC2",
+                "Statistic": "Average",
+                "Period": "300",
+                "EvaluationPeriods": "2",
+                "Threshold": "70",
+                "AlarmActions": [
+                    {
+                        "Ref": "ASG6ScaleDownPolicy"
+                    }
+                ],
+                "Dimensions": [
+                    {
+                        "Name": "AutoScalingGroupName",
+                        "Value": {
+                            "Ref": "ASG6"
+                        }
+                    }
+                ],
+                "ComparisonOperator": "LessThanThreshold"
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "599dede7-42bf-4e15-969c-5656e9d70ab7"
+                }
+            }
+        },
+        "CPU7AlarmHigh": {
+            "Type": "AWS::CloudWatch::Alarm",
+            "Condition": "Set_g",
+            "Properties": {
+                "AlarmDescription": "Scale-up if CPU > 90% for 10 minutes",
+                "MetricName": "CPUUtilization",
+                "Namespace": "AWS/EC2",
+                "Statistic": "Average",
+                "Period": "300",
+                "EvaluationPeriods": "2",
+                "Threshold": "90",
+                "AlarmActions": [
+                    {
+                        "Ref": "ASG7ScaleUpPolicy"
+                    }
+                ],
+                "Dimensions": [
+                    {
+                        "Name": "AutoScalingGroupName",
+                        "Value": {
+                            "Ref": "ASG7"
+                        }
+                    }
+                ],
+                "ComparisonOperator": "GreaterThanThreshold"
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "daacb5b9-2086-4f5c-86de-6962beb00456"
+                }
+            }
+        },
+        "CPU7AlarmLow": {
+            "Type": "AWS::CloudWatch::Alarm",
+            "Condition": "Set_g",
+            "Properties": {
+                "AlarmDescription": "Scale-down if CPU < 70% for 10 minutes",
+                "MetricName": "CPUUtilization",
+                "Namespace": "AWS/EC2",
+                "Statistic": "Average",
+                "Period": "300",
+                "EvaluationPeriods": "2",
+                "Threshold": "70",
+                "AlarmActions": [
+                    {
+                        "Ref": "ASG7ScaleDownPolicy"
+                    }
+                ],
+                "Dimensions": [
+                    {
+                        "Name": "AutoScalingGroupName",
+                        "Value": {
+                            "Ref": "ASG7"
+                        }
+                    }
+                ],
+                "ComparisonOperator": "LessThanThreshold"
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "252dc9b0-65eb-4143-acff-eae598af5acf"
+                }
+            }
+        },
+        "CPU8AlarmHigh": {
+            "Type": "AWS::CloudWatch::Alarm",
+            "Condition": "Set_h",
+            "Properties": {
+                "AlarmDescription": "Scale-up if CPU > 90% for 10 minutes",
+                "MetricName": "CPUUtilization",
+                "Namespace": "AWS/EC2",
+                "Statistic": "Average",
+                "Period": "300",
+                "EvaluationPeriods": "2",
+                "Threshold": "90",
+                "AlarmActions": [
+                    {
+                        "Ref": "ASG8ScaleUpPolicy"
+                    }
+                ],
+                "Dimensions": [
+                    {
+                        "Name": "AutoScalingGroupName",
+                        "Value": {
+                            "Ref": "ASG8"
+                        }
+                    }
+                ],
+                "ComparisonOperator": "GreaterThanThreshold"
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "7c261c34-8982-401b-8540-565790410b3a"
+                }
+            }
+        },
+        "CPU8AlarmLow": {
+            "Type": "AWS::CloudWatch::Alarm",
+            "Condition": "Set_h",
+            "Properties": {
+                "AlarmDescription": "Scale-down if CPU < 70% for 10 minutes",
+                "MetricName": "CPUUtilization",
+                "Namespace": "AWS/EC2",
+                "Statistic": "Average",
+                "Period": "300",
+                "EvaluationPeriods": "2",
+                "Threshold": "70",
+                "AlarmActions": [
+                    {
+                        "Ref": "ASG8ScaleDownPolicy"
+                    }
+                ],
+                "Dimensions": [
+                    {
+                        "Name": "AutoScalingGroupName",
+                        "Value": {
+                            "Ref": "ASG8"
+                        }
+                    }
+                ],
+                "ComparisonOperator": "LessThanThreshold"
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "83f96313-da14-48c3-a0a9-e56aa542f613"
+                }
+            }
+        },
+        "CPU9AlarmHigh": {
+            "Type": "AWS::CloudWatch::Alarm",
+            "Condition": "Set_i",
+            "Properties": {
+                "AlarmDescription": "Scale-up if CPU > 90% for 10 minutes",
+                "MetricName": "CPUUtilization",
+                "Namespace": "AWS/EC2",
+                "Statistic": "Average",
+                "Period": "300",
+                "EvaluationPeriods": "2",
+                "Threshold": "90",
+                "AlarmActions": [
+                    {
+                        "Ref": "ASG9ScaleUpPolicy"
+                    }
+                ],
+                "Dimensions": [
+                    {
+                        "Name": "AutoScalingGroupName",
+                        "Value": {
+                            "Ref": "ASG9"
+                        }
+                    }
+                ],
+                "ComparisonOperator": "GreaterThanThreshold"
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "4890e286-638d-49bc-9d42-78afc025d778"
+                }
+            }
+        },
+        "CPU9AlarmLow": {
+            "Type": "AWS::CloudWatch::Alarm",
+            "Condition": "Set_i",
+            "Properties": {
+                "AlarmDescription": "Scale-down if CPU < 70% for 10 minutes",
+                "MetricName": "CPUUtilization",
+                "Namespace": "AWS/EC2",
+                "Statistic": "Average",
+                "Period": "300",
+                "EvaluationPeriods": "2",
+                "Threshold": "70",
+                "AlarmActions": [
+                    {
+                        "Ref": "ASG9ScaleDownPolicy"
+                    }
+                ],
+                "Dimensions": [
+                    {
+                        "Name": "AutoScalingGroupName",
+                        "Value": {
+                            "Ref": "ASG9"
+                        }
+                    }
+                ],
+                "ComparisonOperator": "LessThanThreshold"
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "180a8f83-eacf-4a0d-aba9-bde59ccaa8f1"
+                }
+            }
+        },
+        "CPU10AlarmHigh": {
+            "Type": "AWS::CloudWatch::Alarm",
+            "Condition": "Set_j",
+            "Properties": {
+                "AlarmDescription": "Scale-up if CPU > 90% for 10 minutes",
+                "MetricName": "CPUUtilization",
+                "Namespace": "AWS/EC2",
+                "Statistic": "Average",
+                "Period": "300",
+                "EvaluationPeriods": "2",
+                "Threshold": "90",
+                "AlarmActions": [
+                    {
+                        "Ref": "ASG10ScaleUpPolicy"
+                    }
+                ],
+                "Dimensions": [
+                    {
+                        "Name": "AutoScalingGroupName",
+                        "Value": {
+                            "Ref": "ASG10"
+                        }
+                    }
+                ],
+                "ComparisonOperator": "GreaterThanThreshold"
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "e9b4e95b-0232-4bd0-bdff-c688176b0a0b"
+                }
+            }
+        },
+        "CPU10AlarmLow": {
+            "Type": "AWS::CloudWatch::Alarm",
+            "Condition": "Set_j",
+            "Properties": {
+                "AlarmDescription": "Scale-down if CPU < 70% for 10 minutes",
+                "MetricName": "CPUUtilization",
+                "Namespace": "AWS/EC2",
+                "Statistic": "Average",
+                "Period": "300",
+                "EvaluationPeriods": "2",
+                "Threshold": "70",
+                "AlarmActions": [
+                    {
+                        "Ref": "ASG10ScaleDownPolicy"
+                    }
+                ],
+                "Dimensions": [
+                    {
+                        "Name": "AutoScalingGroupName",
+                        "Value": {
+                            "Ref": "ASG10"
+                        }
+                    }
+                ],
+                "ComparisonOperator": "LessThanThreshold"
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "30739107-8f9b-42c1-80e3-1f5bb437b695"
+                }
+            }
+        },
+        "CPU1AlarmHigh": {
+            "Type": "AWS::CloudWatch::Alarm",
+            "Condition": "Set_a",
+            "Properties": {
+                "AlarmDescription": "Scale-up if CPU > 90% for 10 minutes",
+                "MetricName": "CPUUtilization",
+                "Namespace": "AWS/EC2",
+                "Statistic": "Average",
+                "Period": "300",
+                "EvaluationPeriods": "2",
+                "Threshold": "90",
+                "AlarmActions": [
+                    {
+                        "Ref": "ASG1ScaleUpPolicy"
+                    }
+                ],
+                "Dimensions": [
+                    {
+                        "Name": "AutoScalingGroupName",
+                        "Value": {
+                            "Ref": "ASG1"
+                        }
+                    }
+                ],
+                "ComparisonOperator": "GreaterThanThreshold"
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "6e539a47-bdee-4d6c-8ecf-02f97390de2e"
+                }
+            }
+        },
+        "CPU1AlarmLow": {
+            "Type": "AWS::CloudWatch::Alarm",
+            "Condition": "Set_a",
+            "Properties": {
+                "AlarmDescription": "Scale-down if CPU < 70% for 10 minutes",
+                "MetricName": "CPUUtilization",
+                "Namespace": "AWS/EC2",
+                "Statistic": "Average",
+                "Period": "300",
+                "EvaluationPeriods": "2",
+                "Threshold": "70",
+                "AlarmActions": [
+                    {
+                        "Ref": "ASG1ScaleDownPolicy"
+                    }
+                ],
+                "Dimensions": [
+                    {
+                        "Name": "AutoScalingGroupName",
+                        "Value": {
+                            "Ref": "ASG1"
+                        }
+                    }
+                ],
+                "ComparisonOperator": "LessThanThreshold"
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "231e6203-1893-4d44-b9c5-7d8d4bebcddd"
+                }
+            }
+        },
+        "CPU2AlarmHigh": {
+            "Type": "AWS::CloudWatch::Alarm",
+            "Condition": "Set_b",
+            "Properties": {
+                "AlarmDescription": "Scale-up if CPU > 90% for 10 minutes",
+                "MetricName": "CPUUtilization",
+                "Namespace": "AWS/EC2",
+                "Statistic": "Average",
+                "Period": "300",
+                "EvaluationPeriods": "2",
+                "Threshold": "90",
+                "AlarmActions": [
+                    {
+                        "Ref": "ASG2ScaleUpPolicy"
+                    }
+                ],
+                "Dimensions": [
+                    {
+                        "Name": "AutoScalingGroupName",
+                        "Value": {
+                            "Ref": "ASG2"
+                        }
+                    }
+                ],
+                "ComparisonOperator": "GreaterThanThreshold"
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "73a1b73b-0511-40cb-8a2d-f785fdc24016"
+                }
+            }
+        },
+        "CPU2AlarmLow": {
+            "Type": "AWS::CloudWatch::Alarm",
+            "Condition": "Set_b",
+            "Properties": {
+                "AlarmDescription": "Scale-down if CPU < 70% for 10 minutes",
+                "MetricName": "CPUUtilization",
+                "Namespace": "AWS/EC2",
+                "Statistic": "Average",
+                "Period": "300",
+                "EvaluationPeriods": "2",
+                "Threshold": "70",
+                "AlarmActions": [
+                    {
+                        "Ref": "ASG2ScaleDownPolicy"
+                    }
+                ],
+                "Dimensions": [
+                    {
+                        "Name": "AutoScalingGroupName",
+                        "Value": {
+                            "Ref": "ASG2"
+                        }
+                    }
+                ],
+                "ComparisonOperator": "LessThanThreshold"
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "219f62e2-ba10-4d9a-a64e-79adf6450e2e"
+                }
+            }
+        },
+        "CPU3AlarmHigh": {
+            "Type": "AWS::CloudWatch::Alarm",
+            "Condition": "Set_c",
+            "Properties": {
+                "AlarmDescription": "Scale-up if CPU > 90% for 10 minutes",
+                "MetricName": "CPUUtilization",
+                "Namespace": "AWS/EC2",
+                "Statistic": "Average",
+                "Period": "300",
+                "EvaluationPeriods": "2",
+                "Threshold": "90",
+                "AlarmActions": [
+                    {
+                        "Ref": "ASG3ScaleUpPolicy"
+                    }
+                ],
+                "Dimensions": [
+                    {
+                        "Name": "AutoScalingGroupName",
+                        "Value": {
+                            "Ref": "ASG3"
+                        }
+                    }
+                ],
+                "ComparisonOperator": "GreaterThanThreshold"
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "b132b650-df10-4e23-a189-cbe9a5927f2b"
+                }
+            }
+        },
+        "CPU3AlarmLow": {
+            "Type": "AWS::CloudWatch::Alarm",
+            "Condition": "Set_c",
+            "Properties": {
+                "AlarmDescription": "Scale-down if CPU < 70% for 10 minutes",
+                "MetricName": "CPUUtilization",
+                "Namespace": "AWS/EC2",
+                "Statistic": "Average",
+                "Period": "300",
+                "EvaluationPeriods": "2",
+                "Threshold": "70",
+                "AlarmActions": [
+                    {
+                        "Ref": "ASG3ScaleDownPolicy"
+                    }
+                ],
+                "Dimensions": [
+                    {
+                        "Name": "AutoScalingGroupName",
+                        "Value": {
+                            "Ref": "ASG3"
+                        }
+                    }
+                ],
+                "ComparisonOperator": "LessThanThreshold"
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "a0de1efb-a148-4db2-827d-9349733a7bd3"
+                }
+            }
+        },
+        "CPU4AlarmHigh": {
+            "Type": "AWS::CloudWatch::Alarm",
+            "Condition": "Set_d",
+            "Properties": {
+                "AlarmDescription": "Scale-up if CPU > 90% for 10 minutes",
+                "MetricName": "CPUUtilization",
+                "Namespace": "AWS/EC2",
+                "Statistic": "Average",
+                "Period": "300",
+                "EvaluationPeriods": "2",
+                "Threshold": "90",
+                "AlarmActions": [
+                    {
+                        "Ref": "ASG4ScaleUpPolicy"
+                    }
+                ],
+                "Dimensions": [
+                    {
+                        "Name": "AutoScalingGroupName",
+                        "Value": {
+                            "Ref": "ASG4"
+                        }
+                    }
+                ],
+                "ComparisonOperator": "GreaterThanThreshold"
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "5f2f5e9e-4f86-4660-afc5-0a1b3f548f54"
+                }
+            }
+        },
+        "CPU4AlarmLow": {
+            "Type": "AWS::CloudWatch::Alarm",
+            "Condition": "Set_d",
+            "Properties": {
+                "AlarmDescription": "Scale-down if CPU < 70% for 10 minutes",
+                "MetricName": "CPUUtilization",
+                "Namespace": "AWS/EC2",
+                "Statistic": "Average",
+                "Period": "300",
+                "EvaluationPeriods": "2",
+                "Threshold": "70",
+                "AlarmActions": [
+                    {
+                        "Ref": "ASG4ScaleDownPolicy"
+                    }
+                ],
+                "Dimensions": [
+                    {
+                        "Name": "AutoScalingGroupName",
+                        "Value": {
+                            "Ref": "ASG4"
+                        }
+                    }
+                ],
+                "ComparisonOperator": "LessThanThreshold"
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "8fb5c9d0-514a-48f7-9c24-4346ccd0e692"
+                }
+            }
+        },
+        "CPU5AlarmHigh": {
+            "Type": "AWS::CloudWatch::Alarm",
+            "Condition": "Set_e",
+            "Properties": {
+                "AlarmDescription": "Scale-up if CPU > 90% for 10 minutes",
+                "MetricName": "CPUUtilization",
+                "Namespace": "AWS/EC2",
+                "Statistic": "Average",
+                "Period": "300",
+                "EvaluationPeriods": "2",
+                "Threshold": "90",
+                "AlarmActions": [
+                    {
+                        "Ref": "ASG5ScaleUpPolicy"
+                    }
+                ],
+                "Dimensions": [
+                    {
+                        "Name": "AutoScalingGroupName",
+                        "Value": {
+                            "Ref": "ASG5"
+                        }
+                    }
+                ],
+                "ComparisonOperator": "GreaterThanThreshold"
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "fc9b2183-f642-4c69-9071-7e1671acd6fd"
+                }
+            }
+        },
+        "CPU5AlarmLow": {
+            "Type": "AWS::CloudWatch::Alarm",
+            "Condition": "Set_e",
+            "Properties": {
+                "AlarmDescription": "Scale-down if CPU < 70% for 10 minutes",
+                "MetricName": "CPUUtilization",
+                "Namespace": "AWS/EC2",
+                "Statistic": "Average",
+                "Period": "300",
+                "EvaluationPeriods": "2",
+                "Threshold": "70",
+                "AlarmActions": [
+                    {
+                        "Ref": "ASG5ScaleDownPolicy"
+                    }
+                ],
+                "Dimensions": [
+                    {
+                        "Name": "AutoScalingGroupName",
+                        "Value": {
+                            "Ref": "ASG5"
+                        }
+                    }
+                ],
+                "ComparisonOperator": "LessThanThreshold"
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "dd2c1fd2-15e4-4376-ab00-460ee8c52303"
+                }
+            }
+        }
+    }
+}
