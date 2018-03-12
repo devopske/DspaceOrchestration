@@ -1,0 +1,1109 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "2 of 2: Second template to launch efs, mount targets, loadbalancer, target groups, Route53 record set, mount target and Instances security groups",
+    "Metadata": {
+        "AWS::CloudFormation::Designer": {
+            "fa23fea0-d96e-4d78-a694-b32f760beaba": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 570,
+                    "y": 330
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "6346c783-310b-4e23-8f4b-05d5911b4cb0": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 570,
+                    "y": 20
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "7cb02c37-64c4-40bb-9730-a33e428fbfe4": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 750,
+                    "y": 150
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "6346c783-310b-4e23-8f4b-05d5911b4cb0",
+                    "fa23fea0-d96e-4d78-a694-b32f760beaba"
+                ]
+            },
+            "0799d09a-5387-4d1c-b24f-10afa930f3a0": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 570,
+                    "y": 160
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "6346c783-310b-4e23-8f4b-05d5911b4cb0",
+                    "fa23fea0-d96e-4d78-a694-b32f760beaba"
+                ]
+            },
+            "9192beb9-bf98-434a-9ce2-01904892ab0b": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 390,
+                    "y": 150
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "6346c783-310b-4e23-8f4b-05d5911b4cb0",
+                    "fa23fea0-d96e-4d78-a694-b32f760beaba"
+                ]
+            },
+            "3662adb4-687f-434d-93f5-6069ef626e4e": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1350,
+                    "y": -30
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "e71daf3d-3ca7-4249-8a43-e1b20296a362": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1480,
+                    "y": -30
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "b35ab279-94bd-4479-b3e7-df4cac875f96": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1350,
+                    "y": 90
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "2cab33b9-196e-4cd9-a4c6-f6e65dfc0b64": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 940,
+                    "y": 260
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "f61e74d4-5efe-41e6-9270-fe0611746bdc"
+                ]
+            },
+            "f61e74d4-5efe-41e6-9270-fe0611746bdc": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 940,
+                    "y": 390
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "e43522d5-5e4b-4487-8861-23f9337f5b54": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1110,
+                    "y": 430
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "95c19db2-8902-4f04-b980-59991d5e4291": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 940,
+                    "y": 120
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "2cab33b9-196e-4cd9-a4c6-f6e65dfc0b64"
+                ]
+            },
+            "22c9a20e-1f35-4317-a5a6-8cf3f4054986": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1480,
+                    "y": 90
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "0b54638d-1d0e-4b27-8300-c0e3b79aa88d": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1350,
+                    "y": 240
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "8199d5ec-7a24-41e6-9aaa-86bfa631559a": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1490,
+                    "y": 240
+                },
+                "z": 0,
+                "embeds": []
+            }
+        }
+    },
+    "Parameters": {
+        "SSHLocation": {
+            "Description": "The IP address range that can be used to SSH to the EC2 instances",
+            "Type": "String",
+            "MinLength": "9",
+            "MaxLength": "18",
+            "Default": "0.0.0.0/0",
+            "AllowedPattern": "(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})/(\\d{1,2})",
+            "ConstraintDescription": "must be a valid IP CIDR range of the form x.x.x.x/x."
+        },
+        "VPC": {
+            "Description": "The major VPC for this infrastracture",
+            "Type": "AWS::EC2::VPC::Id"
+        },
+        "NumberofASGs": {
+            "Description": "Number of Auto Scaling Groups to launch",
+            "Type": "Number",
+            "ConstraintDescription": "Must be a number with digits between 0 and 9."
+        },
+        "DspaceHostedZone": {
+            "Description": "Chose an existing Hostname",
+            "Type": "String",
+            "Default": "dddke.net"
+        },
+        "ALBRoute53DNSName": {
+            "Description": "DNS name for the ELB to be added in Route53. The final end endpoint for the ELB will be <ELBDNSName>.<AWS-Region>.<Environment>.<ELBHostedZone> .",
+            "Type": "String",
+            "Default": "dspacestaging"
+        },
+        "Subnet1": {
+            "Description": "The first public subnet",
+            "Type": "AWS::EC2::Subnet::Id"
+        },
+        "Subnet2": {
+            "Description": "The second public subnet",
+            "Type": "AWS::EC2::Subnet::Id"
+        },
+        "Subnet3": {
+            "Description": "The third public subnet",
+            "Type": "AWS::EC2::Subnet::Id"
+        },
+        "LoadBalancerSG": {
+            "Description": "Security Group for the Application Load Balancer",
+            "Type": "AWS::EC2::SecurityGroup::Id"
+        }
+    },
+    "Conditions": {
+        "Set1": {
+            "Fn::Equals": [
+                {
+                    "Ref": "NumberofASGs"
+                },
+                "1"
+            ]
+        },
+        "Set2": {
+            "Fn::Equals": [
+                {
+                    "Ref": "NumberofASGs"
+                },
+                "2"
+            ]
+        },
+        "Set3": {
+            "Fn::Equals": [
+                {
+                    "Ref": "NumberofASGs"
+                },
+                "3"
+            ]
+        },
+        "Set4": {
+            "Fn::Equals": [
+                {
+                    "Ref": "NumberofASGs"
+                },
+                "4"
+            ]
+        },
+        "Set5": {
+            "Fn::Equals": [
+                {
+                    "Ref": "NumberofASGs"
+                },
+                "5"
+            ]
+        },
+        "Set6": {
+            "Fn::Equals": [
+                {
+                    "Ref": "NumberofASGs"
+                },
+                "6"
+            ]
+        },
+        "Set7": {
+            "Fn::Equals": [
+                {
+                    "Ref": "NumberofASGs"
+                },
+                "7"
+            ]
+        },
+        "Set8": {
+            "Fn::Equals": [
+                {
+                    "Ref": "NumberofASGs"
+                },
+                "8"
+            ]
+        },
+        "Set9": {
+            "Fn::Equals": [
+                {
+                    "Ref": "NumberofASGs"
+                },
+                "9"
+            ]
+        },
+        "Set10": {
+            "Fn::Equals": [
+                {
+                    "Ref": "NumberofASGs"
+                },
+                "10"
+            ]
+        },
+        "Set_a": {
+            "Fn::Or": [
+                {
+                    "Condition": "Set1"
+                },
+                {
+                    "Condition": "Set2"
+                },
+                {
+                    "Condition": "Set3"
+                },
+                {
+                    "Condition": "Set4"
+                },
+                {
+                    "Condition": "Set5"
+                },
+                {
+                    "Condition": "Set6"
+                },
+                {
+                    "Condition": "Set7"
+                },
+                {
+                    "Condition": "Set8"
+                },
+                {
+                    "Condition": "Set9"
+                },
+                {
+                    "Condition": "Set10"
+                }
+            ]
+        },
+        "Set_b": {
+            "Fn::Or": [
+                {
+                    "Condition": "Set2"
+                },
+                {
+                    "Condition": "Set3"
+                },
+                {
+                    "Condition": "Set4"
+                },
+                {
+                    "Condition": "Set5"
+                },
+                {
+                    "Condition": "Set6"
+                },
+                {
+                    "Condition": "Set7"
+                },
+                {
+                    "Condition": "Set8"
+                },
+                {
+                    "Condition": "Set9"
+                },
+                {
+                    "Condition": "Set10"
+                }
+            ]
+        },
+        "Set_c": {
+            "Fn::Or": [
+                {
+                    "Condition": "Set3"
+                },
+                {
+                    "Condition": "Set4"
+                },
+                {
+                    "Condition": "Set5"
+                },
+                {
+                    "Condition": "Set6"
+                },
+                {
+                    "Condition": "Set7"
+                },
+                {
+                    "Condition": "Set8"
+                },
+                {
+                    "Condition": "Set9"
+                },
+                {
+                    "Condition": "Set10"
+                }
+            ]
+        },
+        "Set_d": {
+            "Fn::Or": [
+                {
+                    "Condition": "Set4"
+                },
+                {
+                    "Condition": "Set5"
+                },
+                {
+                    "Condition": "Set6"
+                },
+                {
+                    "Condition": "Set7"
+                },
+                {
+                    "Condition": "Set8"
+                },
+                {
+                    "Condition": "Set9"
+                },
+                {
+                    "Condition": "Set10"
+                }
+            ]
+        },
+        "Set_e": {
+            "Fn::Or": [
+                {
+                    "Condition": "Set5"
+                },
+                {
+                    "Condition": "Set6"
+                },
+                {
+                    "Condition": "Set7"
+                },
+                {
+                    "Condition": "Set8"
+                },
+                {
+                    "Condition": "Set9"
+                },
+                {
+                    "Condition": "Set10"
+                }
+            ]
+        },
+        "Set_f": {
+            "Fn::Or": [
+                {
+                    "Condition": "Set6"
+                },
+                {
+                    "Condition": "Set7"
+                },
+                {
+                    "Condition": "Set8"
+                },
+                {
+                    "Condition": "Set9"
+                },
+                {
+                    "Condition": "Set10"
+                }
+            ]
+        },
+        "Set_g": {
+            "Fn::Or": [
+                {
+                    "Condition": "Set7"
+                },
+                {
+                    "Condition": "Set8"
+                },
+                {
+                    "Condition": "Set9"
+                },
+                {
+                    "Condition": "Set10"
+                }
+            ]
+        },
+        "Set_h": {
+            "Fn::Or": [
+                {
+                    "Condition": "Set8"
+                },
+                {
+                    "Condition": "Set9"
+                },
+                {
+                    "Condition": "Set10"
+                }
+            ]
+        },
+        "Set_i": {
+            "Fn::Or": [
+                {
+                    "Condition": "Set9"
+                },
+                {
+                    "Condition": "Set10"
+                }
+            ]
+        },
+        "Set_j": {
+            "Fn::Equals": [
+                {
+                    "Ref": "NumberofASGs"
+                },
+                "10"
+            ]
+        }
+    },
+    "Resources": {
+        "MountTarget1": {
+            "Type": "AWS::EFS::MountTarget",
+            "Properties": {
+                "SubnetId": {
+                    "Ref": "Subnet1"
+                },
+                "FileSystemId": {
+                    "Ref": "FileSystem"
+                },
+                "SecurityGroups": [
+                    {
+                        "Ref": "MountTargetSG"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "9192beb9-bf98-434a-9ce2-01904892ab0b"
+                }
+            }
+        },
+        "MountTarget2": {
+            "Type": "AWS::EFS::MountTarget",
+            "Properties": {
+                "FileSystemId": {
+                    "Ref": "FileSystem"
+                },
+                "SubnetId": {
+                    "Ref": "Subnet2"
+                },
+                "SecurityGroups": [
+                    {
+                        "Ref": "MountTargetSG"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "0799d09a-5387-4d1c-b24f-10afa930f3a0"
+                }
+            }
+        },
+        "MountTarget3": {
+            "Type": "AWS::EFS::MountTarget",
+            "Properties": {
+                "FileSystemId": {
+                    "Ref": "FileSystem"
+                },
+                "SubnetId": {
+                    "Ref": "Subnet3"
+                },
+                "SecurityGroups": [
+                    {
+                        "Ref": "MountTargetSG"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "7cb02c37-64c4-40bb-9730-a33e428fbfe4"
+                }
+            }
+        },
+        "MountTargetSG": {
+            "Type": "AWS::EC2::SecurityGroup",
+            "Properties": {
+                "VpcId": {
+                    "Ref": "VPC"
+                },
+                "GroupDescription": "Security group for mount target",
+                "SecurityGroupIngress": [
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "2049",
+                        "ToPort": "2049",
+                        "SourceSecurityGroupId": {
+                            "Ref": "InstanceSG"
+                        }
+                    }
+                ],
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "Scaling MountTargetSG"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "fa23fea0-d96e-4d78-a694-b32f760beaba"
+                }
+            }
+        },
+        "FileSystem": {
+            "Type": "AWS::EFS::FileSystem",
+            "Properties": {
+                "PerformanceMode": "generalPurpose",
+                "FileSystemTags": [
+                    {
+                        "Key": "Name",
+                        "Value": "dspace_project_staging_file_system"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "6346c783-310b-4e23-8f4b-05d5911b4cb0"
+                }
+            }
+        },
+        "ApplicationLoadBalancer": {
+            "Type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+            "Properties": {
+                "Scheme": "internet-facing",
+                "SecurityGroups": [
+                    {
+                        "Ref": "LoadBalancerSG"
+                    }
+                ],
+                "Subnets": [
+                    {
+                        "Ref": "Subnet1"
+                    },
+                    {
+                        "Ref": "Subnet2"
+                    },
+                    {
+                        "Ref": "Subnet3"
+                    }
+                ],
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "dspace_project_staging_ApplicationLoadBalancer"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "2cab33b9-196e-4cd9-a4c6-f6e65dfc0b64"
+                }
+            }
+        },
+        "TargetGroup1": {
+            "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+            "Properties": {
+                "HealthCheckIntervalSeconds": 30,
+                "HealthCheckTimeoutSeconds": 5,
+                "HealthyThresholdCount": 3,
+                "Port": 80,
+                "Protocol": "HTTP",
+                "UnhealthyThresholdCount": 5,
+                "VpcId": {
+                    "Ref": "VPC"
+                },
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "dspace_project_staging_TargetGroup1"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "3662adb4-687f-434d-93f5-6069ef626e4e"
+                }
+            }
+        },
+        "TargetGroup2": {
+            "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+            "Properties": {
+                "HealthCheckIntervalSeconds": 30,
+                "HealthCheckTimeoutSeconds": 5,
+                "HealthyThresholdCount": 3,
+                "Port": 80,
+                "Protocol": "HTTP",
+                "UnhealthyThresholdCount": 5,
+                "VpcId": {
+                    "Ref": "VPC"
+                },
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "dspace_project_staging_TargetGroup2"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "e71daf3d-3ca7-4249-8a43-e1b20296a362"
+                }
+            }
+        },
+        "TargetGroup3": {
+            "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+            "Properties": {
+                "HealthCheckIntervalSeconds": 30,
+                "HealthCheckTimeoutSeconds": 5,
+                "HealthyThresholdCount": 3,
+                "Port": 80,
+                "Protocol": "HTTP",
+                "UnhealthyThresholdCount": 5,
+                "VpcId": {
+                    "Ref": "VPC"
+                },
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "dspace_project_staging_TargetGroup3"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "b35ab279-94bd-4479-b3e7-df4cac875f96"
+                }
+            }
+        },
+        "DspaceRoute53": {
+            "Type": "AWS::Route53::RecordSet",
+            "Properties": {
+                "HostedZoneName": {
+                    "Fn::Join": [
+                        "",
+                        [
+                            {
+                                "Ref": "DspaceHostedZone"
+                            },
+                            "."
+                        ]
+                    ]
+                },
+                "Comment": "CNAME redirect for ALB",
+                "Name": {
+                    "Fn::Join": [
+                        "",
+                        [
+                            {
+                                "Ref": "ALBRoute53DNSName"
+                            },
+                            ".",
+                            {
+                                "Ref": "AWS::Region"
+                            },
+                            ".",
+                            {
+                                "Ref": "DspaceHostedZone"
+                            },
+                            "."
+                        ]
+                    ]
+                },
+                "Type": "CNAME",
+                "TTL": "300",
+                "ResourceRecords": [
+                    {
+                        "Fn::GetAtt": [
+                            "ApplicationLoadBalancer",
+                            "CanonicalHostedZoneID"
+                        ]
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "e43522d5-5e4b-4487-8861-23f9337f5b54"
+                }
+            }
+        },
+        "LoadBalancerListener": {
+            "Type": "AWS::ElasticLoadBalancingV2::Listener",
+            "Properties": {
+                "DefaultActions": [
+                    {
+                        "Type": "forward",
+                        "TargetGroupArn": {
+                            "Ref": "TargetGroup1"
+                        }
+                    }
+                ],
+                "LoadBalancerArn": {
+                    "Ref": "ApplicationLoadBalancer"
+                },
+                "Port": "80",
+                "Protocol": "HTTP"
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "95c19db2-8902-4f04-b980-59991d5e4291"
+                }
+            }
+        },
+        "InstanceSG": {
+            "Type": "AWS::EC2::SecurityGroup",
+            "Properties": {
+                "GroupDescription": "Security group for the Application Load Balancer",
+                "SecurityGroupIngress": [
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "22",
+                        "ToPort": "22",
+                        "CidrIp": {
+                            "Ref": "SSHLocation"
+                        }
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "80",
+                        "ToPort": "80",
+                        "CidrIp": "0.0.0.0/0"
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "8080",
+                        "ToPort": "8080",
+                        "CidrIp": "0.0.0.0/0"
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "8081",
+                        "ToPort": "8081",
+                        "CidrIp": "0.0.0.0/0"
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "8082",
+                        "ToPort": "8082",
+                        "CidrIp": "0.0.0.0/0"
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "8083",
+                        "ToPort": "8083",
+                        "CidrIp": "0.0.0.0/0"
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "8084",
+                        "ToPort": "8084",
+                        "CidrIp": "0.0.0.0/0"
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "8085",
+                        "ToPort": "8085",
+                        "CidrIp": "0.0.0.0/0"
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "8086",
+                        "ToPort": "8086",
+                        "CidrIp": "0.0.0.0/0"
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "8087",
+                        "ToPort": "8087",
+                        "CidrIp": "0.0.0.0/0"
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "8088",
+                        "ToPort": "8088",
+                        "CidrIp": "0.0.0.0/0"
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "8089",
+                        "ToPort": "8089",
+                        "CidrIp": "0.0.0.0/0"
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "8090",
+                        "ToPort": "8090",
+                        "CidrIp": "0.0.0.0/0"
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "8091",
+                        "ToPort": "8091",
+                        "CidrIp": "0.0.0.0/0"
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "8092",
+                        "ToPort": "8092",
+                        "CidrIp": "0.0.0.0/0"
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "8093",
+                        "ToPort": "8093",
+                        "CidrIp": "0.0.0.0/0"
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "8094",
+                        "ToPort": "8094",
+                        "CidrIp": "0.0.0.0/0"
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "8095",
+                        "ToPort": "8095",
+                        "CidrIp": "0.0.0.0/0"
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "5432",
+                        "ToPort": "5432",
+                        "CidrIp": "0.0.0.0/0"
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "8139",
+                        "ToPort": "8139",
+                        "CidrIp": "0.0.0.0/0"
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "8140",
+                        "ToPort": "8140",
+                        "CidrIp": "0.0.0.0/0"
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "2049",
+                        "ToPort": "2049",
+                        "CidrIp": "0.0.0.0/0"
+                    }
+                ],
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "dspace_project_staging_Application LoadBalancer SG"
+                    }
+                ],
+                "VpcId": {
+                    "Ref": "VPC"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "f61e74d4-5efe-41e6-9270-fe0611746bdc"
+                }
+            }
+        },
+        "TargetGroup4": {
+            "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+            "Properties": {
+                "HealthCheckIntervalSeconds": 30,
+                "HealthCheckTimeoutSeconds": 5,
+                "HealthyThresholdCount": 3,
+                "Port": 80,
+                "Protocol": "HTTP",
+                "UnhealthyThresholdCount": 5,
+                "VpcId": {
+                    "Ref": "VPC"
+                },
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "dspace_project_staging_TargetGroup4"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "22c9a20e-1f35-4317-a5a6-8cf3f4054986"
+                }
+            }
+        },
+        "TargetGroup5": {
+            "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+            "Properties": {
+                "HealthCheckIntervalSeconds": 30,
+                "HealthCheckTimeoutSeconds": 5,
+                "HealthyThresholdCount": 3,
+                "Port": 80,
+                "Protocol": "HTTP",
+                "UnhealthyThresholdCount": 5,
+                "VpcId": {
+                    "Ref": "VPC"
+                },
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "dspace_project_staging_TargetGroup5"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "0b54638d-1d0e-4b27-8300-c0e3b79aa88d"
+                }
+            }
+        },
+        "TargetGroup6": {
+            "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+            "Properties": {
+                "HealthCheckIntervalSeconds": 30,
+                "HealthCheckTimeoutSeconds": 5,
+                "HealthyThresholdCount": 3,
+                "Port": 80,
+                "Protocol": "HTTP",
+                "UnhealthyThresholdCount": 5,
+                "VpcId": {
+                    "Ref": "VPC"
+                },
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "dspace_project_staging_TargetGroup6"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "8199d5ec-7a24-41e6-9aaa-86bfa631559a"
+                }
+            }
+        }
+    },
+    "Outputs": {
+        "TargetGroup1": {
+            "Value": {
+                "Ref": "TargetGroup1"
+            },
+            "Description": "The group ID for the first target group"
+        },
+        "TargetGroup2": {
+            "Value": {
+                "Ref": "TargetGroup2"
+            },
+            "Description": "The group ID for the second target group"
+        },
+        "TargetGroup3": {
+            "Value": {
+                "Ref": "TargetGroup3"
+            },
+            "Description": "The group ID for the first target group"
+        },
+        "TargetGroup4": {
+            "Value": {
+                "Ref": "TargetGroup4"
+            },
+            "Description": "The group ID for the first target group"
+        },
+        "TargetGroup5": {
+            "Value": {
+                "Ref": "TargetGroup5"
+            },
+            "Description": "The group ID for the fifth target group"
+        },
+        "TargetGroup6": {
+            "Value": {
+                "Ref": "TargetGroup6"
+            },
+            "Description": "The group ID for the sixth target group"
+        },
+        "InstanceSG": {
+            "Value": {
+                "Ref": "InstanceSG"
+            },
+            "Description": "Security Group ID for the InstanceSG"
+        }
+    }
+}
